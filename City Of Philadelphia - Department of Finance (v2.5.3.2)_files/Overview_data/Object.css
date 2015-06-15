@@ -1,0 +1,310 @@
+BODY
+{
+	/* margin-left: 4px;
+	 margin-top: 0px;
+	 margin-bottom: 0px;
+	 margin-right: 0px; */
+}
+
+.tab
+{
+	border: 1px solid black;
+	PADDING-TOP: 5px; 
+	PADDING-RIGHT: 20px;
+	PADDING-BOTTOM: 5px; 
+	PADDING-LEFT: 20px;
+	MARGIN: 0px; 
+	MARGIN-RIGHT: -1px; 
+	MARGIN-LEFT: -1px;
+	height: 25px;
+	background-image: url(../Images/TabBackground.jpg);
+	background-position : 0 90;
+  FONT-SIZE: 8pt;
+  FONT-FAMILY: Verdana, Arial;
+  TEXT-DECORATION: none;
+  color: black;
+	display:inline;
+	font-weight: normal;
+	cursor: pointer;
+}
+.tabSelected
+{
+/*	background-image: url(../Images/TabSelect.gif);*/
+	background-position : 0 0;
+/*	height: 25px;	*/
+/*	background-repeat:no-repeat;	*/
+	border-bottom: 0px solid black;
+	color: rgb(152,0,0);
+/*	font-weight: bold;	*/
+ 	cursor: default;
+}
+/*.tabNotSelected
+{
+}*/
+.tabHighlighted
+{
+	TEXT-DECORATION: underline;
+}
+
+
+.linefeed
+{
+	margin-bottom: 4px;
+	margin-top: 4px;
+} 
+.divContent
+{
+	/* border: none 1px;
+	left: 20px;
+	width: 100%;
+	position: absolute;
+	top: 0px;
+	height: 100%; */
+	/*padding-left: 5px;*/
+	overflow:auto;
+} 
+.divContent .divHeader
+{
+	display: inline-block;
+	/* padding-left: 5px; */
+	padding-bottom: 5px;
+	padding-top: 10px;
+}
+.divContent .divPageDesc
+{
+	display: inline-block;
+	/* padding-left: 5px; */
+	padding-bottom: 5px;
+	padding-top: 5px;
+}
+.divContent .divCol
+{
+	display: inline;
+	/* padding-left: 5px; */
+	padding-bottom: 5px;
+	padding-top: 5px;
+}
+.divContent .divCol_45
+{
+	display: inline;
+	/* padding-left: 5px; */
+	padding-bottom: 5px;
+	width: 45%;
+	padding-top: 5px;
+}
+.divContent .divCol_100
+{
+	border: none 1px;
+	display: inline-block;
+	/* padding-left: 5px; */
+	padding-bottom: 5px;
+	padding-top: 5px;
+}
+.divContent .divDatagrid
+{
+	/* padding-left: 5px; */
+	padding-bottom: 5px;
+	overflow: auto;
+	height: 100%;
+	width: 100%;
+}
+.layVisible
+{
+  VISIBILITY: visible;
+}
+.layHidden
+{
+    DISPLAY: none;
+    VISIBILITY: hidden;
+}
+.tblNormal
+{
+	border-style: none;
+	border-width: 1px;
+	border-color: black;
+	padding: 2;
+	margin: 0;
+	width: 100%;
+}
+.tblGrid
+{
+	/* height: expression((window.screen.availHeight - (window.screenTop + this.offsetTop)) - 25); */
+}
+.tblHidden
+{
+	display: none;
+}
+.rowHeader
+{ 
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 6pt;
+    FONT-FAMILY: Tahoma, 'MS Sans Serif', Verdana, Arial;
+    HEIGHT: 25px;
+    BACKGROUND-COLOR: lightcyan;
+    TEXT-ALIGN: center
+}
+.celLeft
+{
+    BORDER-LEFT: darkgray thin solid
+}
+.celRightLeft
+{
+    BORDER-RIGHT: darkgray thin solid;
+    BORDER-LEFT: darkgray thin solid
+}
+.celRight
+{
+    BORDER-RIGHT: darkgray thin solid
+}
+.celTop
+{
+    BORDER-TOP: darkgray thin solid
+}
+.celHighlightTop
+{
+    BORDER-TOP: black thin solid;
+    FONT-SIZE: 14px;
+    BORDER-LEFT: darkgray thin solid;
+    COLOR: black;
+    BACKGROUND-COLOR: lightcyan
+}
+.celHighlightBtm
+{
+    FONT-SIZE: 14px;
+    BORDER-LEFT: darkgray thin solid;
+    COLOR: black;
+    BORDER-BOTTOM: black thin solid;
+    BACKGROUND-COLOR: lightcyan
+}
+.celHighlightTopBtm
+{
+    BORDER-TOP: black thin solid;
+    FONT-SIZE: 14px;
+    BORDER-LEFT: darkgray thin solid;
+    COLOR: black;
+    BORDER-BOTTOM: black thin solid;
+    BACKGROUND-COLOR: lightcyan
+}
+.rowDataEven
+{
+    HEIGHT: 20px;
+    BACKGROUND-COLOR: #e0e0e0
+}
+.rowDataOdd
+{
+    HEIGHT: 20px;
+    BACKGROUND-COLOR: whitesmoke
+}
+.btnNormal
+{
+	border-right: gray thin outset;
+	border-top: white thin outset;
+	font-size: 8pt;
+	margin-left: 5px;
+	border-left: white thin outset;
+	cursor: hand;
+	color: black;
+	margin-right: 5px;
+	border-bottom: gray thin outset;
+	font-family: 'MS Sans Serif';
+	height: 24px;
+}
+.btnSmall
+{
+    BORDER-RIGHT: gray thin outset;
+    BORDER-TOP: white thin outset;
+    FONT-SIZE: 8pt;
+    BORDER-LEFT: white thin outset;
+    WIDTH: 40px;
+    CURSOR: hand;
+    COLOR: black;
+    BORDER-BOTTOM: gray thin outset;
+    FONT-FAMILY: Tahoma, 'MS Sans Serif';
+    HEIGHT: 17px;
+    TEXT-ALIGN: center
+}
+.rowHighlight
+{
+    BORDER-RIGHT: black thin solid;
+    BORDER-TOP: black thin solid;
+    FONT-SIZE: 14px;
+    BORDER-LEFT: black thin solid;
+    COLOR: black;
+    BORDER-BOTTOM: black thin solid;
+    BACKGROUND-COLOR: lightcyan
+}
+.tblShowBorder
+{
+    BORDER-RIGHT: darkgray thin solid;
+    BORDER-TOP: darkgray thin solid;
+    BORDER-LEFT: darkgray thin solid;
+    BORDER-BOTTOM: darkgray thin solid
+}
+.rowSmallHdr
+{
+}
+.cboNormal
+{
+    FONT-SIZE: 9pt;
+    WIDTH: 100%
+}
+.txtNormal
+{
+    FONT-SIZE: 9pt
+}
+.txtPhone3
+{
+    FONT-SIZE: 9pt;
+    WIDTH: 30%
+}
+.txtPhone4
+{
+    FONT-SIZE: 9pt;
+    WIDTH: 40%
+}
+TD
+{
+	/* vertical-align:text-top; */
+}
+
+/* LE new class created 1/07 */
+.divOverview
+{
+	/*BORDER-RIGHT: #0056ac 5px double; 
+	BORDER-TOP: #0056ac 5px double; 
+	DISPLAY: inline; 
+	Z-INDEX: 101; 
+	BORDER-LEFT: #0056ac 5px double; 
+	WIDTH: 90%; 
+	BORDER-BOTTOM: #0056ac 5px double; 
+	HEIGHT: 40%; 
+	BACKGROUND-COLOR: white */
+	border: 5px double #003399;
+	width: 90%;
+	height: auto;
+}
+
+/* LE definitions.htm classes for old style 1/11/2008 */
+
+.defRowOdd
+{
+	BORDER-RIGHT: black 1px solid; 
+	BORDER-TOP: black 1px solid; 
+	BORDER-LEFT: black 1px solid; 
+	BORDER-BOTTOM: black 1px solid; 
+	BACKGROUND-COLOR: #e3fde1;
+}
+
+.defRowEven
+{
+	BORDER-RIGHT: black 1px solid; 
+	BORDER-TOP: black 1px solid; 
+	BORDER-LEFT: black 1px solid; 
+	BORDER-BOTTOM: black 1px solid; 
+	BACKGROUND-COLOR: #f3e7db;
+}
+	
+.defRowFirstCol
+{
+	WIDTH: 20%
+}

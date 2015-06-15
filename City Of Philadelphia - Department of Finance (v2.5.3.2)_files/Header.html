@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta name="vs_snapToGrid" content="False">
+		<meta name="vs_showGrid" content="True">
+		<title></title>
+		<meta name="vs_defaultClientScript" content="JavaScript">
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<meta name="GENERATOR" content="Microsoft Visual Studio .NET 7.1">
+		<meta name="ProgId" content="VisualStudio.HTML">
+		<meta name="Originator" content="Microsoft Visual Studio .NET 7.1">
+		<script language="jscript">
+			var gbLoggedIn = false
+			var gsContractId = ''
+	
+			function isLoaded() {
+				if (parent.main) {				
+					if (parent.main.document.readyState != 'complete') {
+						setTimeout('isLoaded()',500)
+					}		//if
+				} else {
+					parent.location.href = '<%= Session("AbsolutePath")%>' + 'Default.aspx'
+				}		//if
+			}		//isLoaded
+
+			function Initialize() {
+				isLoaded()
+			}		//initialize
+		</script>
+	</head>
+	<body onpageshow="Initialize();" ms_positioning="GridLayout" background="City%20Of%20Philadelphia%20-%20Department%20of%20Finance%20(v2.5.3.2)_files/Header.html">
+		<img style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; Z-INDEX: 101; LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; POSITION: absolute; TOP: 0px" alt="" src="Header_data/eContractPhillyLongerban.jpg">
+	
+
+</body></html>

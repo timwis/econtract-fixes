@@ -1,0 +1,555 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+		<title></title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta content="False" name="vs_snapToGrid">
+		<meta content="JavaScript" name="vs_defaultClientScript">
+		<meta content="Microsoft Visual Studio .NET 7.1" name="GENERATOR">
+		<meta content="VisualStudio.HTML" name="ProgId">
+		<meta content="Microsoft Visual Studio .NET 7.1" name="Originator">
+		<link href="frmMenu_data/Font.css" type="text/css" rel="stylesheet">
+			<script language="jscript">
+			var gbLoggedIn = false
+			var gsContractId = ''
+			var gbDisplayDiscloseUpdate = false
+			var sCurrentVendorTab = ''
+			var sCurrentDisclosureTab = ''
+			
+	
+			function isLoaded() {
+				if (parent.main.document.readyState != 'complete' ||
+						parent.MenuWin.document.readyState != 'complete') {
+					setTimeout('isLoaded()',500)
+				}		//if
+
+				if (parent.main) {
+				} else {
+					parent.location.href = '../Default.aspx'
+				}		//if
+				
+				
+			}		//isLoaded
+
+			function Initialize() {
+//EHD - 2008.01.28 - v2.4.13 - Added from v2.2.30
+				if ('False' == 'False'){
+					gbLoggedIn = false
+					gsContractId = ''
+				}else{
+					gbLoggedIn = true
+					gsContractId = ''
+				}		//if
+				isLoaded()
+				ispMenu_Load()
+			}		//initialize
+
+			function ispMenu_Load() {
+				var env = 'P'
+					ispDisplayMenuItems()
+			}		//ispMenu_Load
+
+			function ispDisplayMenuItems(sMenuId) {
+				mnuAmendmentList.style.display = 'block'
+				mnuAwardList.style.display = 'block'
+				mnuNewContract.style.display = 'block'
+				divVendorSection.style.display = 'none'
+				divVendorInfo.style.display = 'none'
+				divDisclosureApp.style.display = 'none'
+				divSummary.style.display = 'none'
+//				divUpdates.style.display = 'none'
+				if (gbLoggedIn == true) {
+//alert(sMenuId)
+					divLogin.style.display = 'none'
+					divLogout.style.display = 'block'
+					divVendorSection.style.display = 'block'
+					divVendorInfo.style.display = 'block'
+					mnuUpdates.style.display = 'block'
+					if (gsContractId != '') {
+						if (parent.main.location.href.search('VendorApp.aspx') == -1) {
+							divDisclosureApp.style.display = 'none'
+						} else {
+							divDisclosureApp.style.display = 'block'
+						}		//if
+						if (sCurrentVendorTab == 'CON') {
+//							mnuDisclosureApp.innerText = 'Contract'
+							mnuDisDocuments.style.display = 'none'
+						} else {
+//							mnuDisclosureApp.innerText = 'Application'
+							mnuDisDocuments.style.display = 'block'
+						}		//if
+					}		//if
+				}	else {
+				  divVendorSection.style.display = 'none'
+					divLogout.style.display = 'none'
+					divLogin.style.display = 'block'
+				}		//if
+				if (sMenuId == 'mnuNewContractDetail') { /* delete this */
+			//		divNewContract.style.display = 'block'
+				} else if (sMenuId == 'mnuRenewalList') {
+				//	divRenewal.style.display = 'block'				
+				} else if (sMenuId == 'mnuNewContract') {
+//					divNewContract.style.display = 'block'
+				} else if (sMenuId == 'mnuSumOpportunityDetail') {
+					//divSumOpportunity.style.display = 'block'
+				//} else if (sMenuId == 'mnuSumContractDetail') {
+				//	divSumContract.style.display = 'block'					
+				} else if (sMenuId == 'mnuAwardNotice') {
+			//		divOpportunity.style.display = 'block'					
+				} else if (sMenuId == 'mnuExecutedNotice') {
+			//		divExecuted.style.display = 'block'	
+				} else if (sMenuId == 'mnuSummary' || sMenuId == 'mnuApplicationList' || sMenuId == 'mnuContractList') {
+					divSummary.style.display = 'block'
+			//		divDisclosureApp.style.display = 'block'					
+				} else if (sMenuId == 'mnuDiscloseApp' || sMenuId == 'mnuDisConsult' ||
+					sMenuId == 'mnuDisContrib' || sMenuId == 'mnuDisContractor' ||
+					sMenuId == 'mnuDisCEContrib' || sMenuId == 'mnuDisCEAdvice' ||
+					sMenuId == 'mnuDisDocuments'){
+					divDisclosureApp.style.display = 'block'
+					if (sCurrentVendorTab == 'CON') {
+						mnuDiscloseApp.innerText = 'Contract'
+						mnuDisDocuments.style.display = 'none'
+					} else {
+						mnuDiscloseApp.innerText = 'Application'
+						mnuDisDocuments.style.display = 'block'
+					}		//if
+				}		//if									
+			}		//ispDisplayMenuItems
+						
+			function ispMenu_MouseOver() {
+				if (event.srcElement.className == 'mnuNormal') {
+					event.srcElement.className = 'mnuHighlight'
+				}
+				if (event.srcElement.id == 'mnuUnitary'){
+					iMenuTop = event.srcElement.offsetTop
+					iMainScreenTop = parent.main.document.body.scrollTop
+
+					if (parent.main.divUnitary) {
+						parent.main.divUnitary.style.posTop = iMainScreenTop + iMenuTop
+						parent.main.divUnitary.style.posLeft = 5
+						parent.main.divUnitary.style.visibility = 'visible'
+						parent.main.divUnitary.style.display = 'block'
+					}		//if
+				} else if (event.srcElement.id == 'mnuBill050428') {
+					status = 'Shortcut to CertifiedCopy05042800.pdf'
+				}
+			}		//ispMenu_MouseOver
+
+			function ispMenu_MouseOut() {
+				status = ''
+				if (event.srcElement.className == 'mnuHighlight') {
+					event.srcElement.className = 'mnuNormal'
+				}
+				if (event.srcElement.id == 'mnuUnitary'){
+					event.srcElement.className = 'mnuNormal'
+					if (parent.main.divUnitary) {
+						parent.main.divUnitary.style.visibility = 'hidden'
+						parent.main.divUnitary.style.display = 'none'
+					}		//if
+				}		//if
+			}		//ispMenu_MouseOut
+
+			function ispMenu_onclick(mnuElement) {
+			
+				if (mnuElement) {
+				}	else {
+					mnuElement = event.srcElement
+					if (mnuElement.id == '' || mnuElement.id.match('div') != null) {
+						return
+					}		//if
+				}		//if
+
+				 if (mnuElement.id.match('mnuVendorSection') == null &&
+						mnuElement.id.match('mnuQHits') == null &&
+						mnuElement.id.match('mnuBill') == null) {
+
+					ispHighlightMenu(mnuElement)
+				}		//if
+
+					switch (mnuElement.id) {
+//Top General Items
+						case 'mnuGenHome':
+						//parent.main.window.document.body.style.visibility = 'hidden'
+						//temp sjc 2012-12-07
+							parent.main.window.document.body.style.display = 'none'
+							window.open('http://www.phila.gov', '_blank')
+							break
+						case 'mnuGenOverview':
+							parent.main.location.href = 'https://secure.phila.gov/ECONTRACT/' + 'Inc/Overview.aspx'
+							break
+						case 'mnuQHits17_1400':
+							window.open('http://www.amlegal.com/nxt/gateway.dll/Pennsylvania/philadelphia_pa/title17contractsandprocurement/chapter17-1400non-competitivelybidcontra?f=templates$fn=default.htm$3.0$vid=amlegal:philadelphia_pa$anc=', '_blank')
+							break
+						case 'mnuCodeDefs':
+							window.open('http://www.amlegal.com/nxt/gateway.dll/Pennsylvania/philadelphia_pa/title17contractsandprocurement/chapter17-1400non-competitivelybidcontra?f=templates$fn=default.htm$3.0$vid=amlegal:philadelphia_pa$anc=LPTOC1','_blank')
+							break
+						case 'mnuQHitsHomeRule':
+							window.open('http://www.amlegal.com/nxt/gateway.dll/Pennsylvania/philadelphia_pa/philadelphiahomerulecharter?f=templates$fn=default.htm$3.0$vid=amlegal:philadelphia_pa$anc=', '_blank')
+							break
+//Lists
+						case 'mnuNewContract':
+							//parent.main.window.document.body.style.visibility = 'hidden'
+							//temp sjc 2012-12-07
+							parent.main.window.document.body.style.display = 'none'
+							parent.main.location.href = 'https://secure.phila.gov/ECONTRACT/' + 'Documents/FrmOpportunityList.aspx'
+							break
+						case 'mnuOpportunityList':
+							//parent.main.window.document.body.style.visibility = 'hidden'
+							//temp sjc 2012-12-07
+							parent.main.window.document.body.style.display = 'none'
+							parent.main.location.href = 'https://secure.phila.gov/ECONTRACT/' + 'Documents/FrmAwardList.aspx'
+							break
+						case 'mnuAwardList':
+							//parent.main.window.document.body.style.visibility = 'hidden'
+							//temp sjc 2012-12-07
+							parent.main.window.document.body.style.display = 'none'
+							parent.main.location.href = 'https://secure.phila.gov/ECONTRACT/' + 'Documents/FrmAwardList.aspx'
+							break
+						case 'mnuAmendmentList':
+							//parent.main.window.document.body.style.visibility = 'hidden'
+							//temp sjc 2012-12-07
+							parent.main.window.document.body.style.display = 'none'
+							parent.main.location.href = 'https://secure.phila.gov/ECONTRACT/' + 'Documents/FrmAmendmentList.aspx'
+							break
+						case 'mnuRenewalList':
+							//parent.main.window.document.body.style.visibility = 'hidden'
+							//temp sjc 2012-12-07
+							parent.main.window.document.body.style.display = 'none'
+							parent.main.location.href = 'https://secure.phila.gov/ECONTRACT/' + 'Documents/FrmRenewalList.aspx'
+							break
+						case 'mnuExecutedList':
+							//parent.main.window.document.body.style.visibility = 'hidden'
+							//temp sjc 2012-12-07
+							parent.main.window.document.body.style.display = 'none'
+							parent.main.location.href = 'https://secure.phila.gov/ECONTRACT/' + 'Documents/FrmExecutedList.aspx'
+							break
+						case 'mnuReports':
+							//parent.main.window.document.body.style.visibility = 'hidden'
+							//temp sjc 2012-12-07
+							parent.main.window.document.body.style.display = 'none'
+							parent.main.location.href = 'https://secure.phila.gov/ECONTRACT/' + 'Documents/Reports.aspx'
+							break
+//Vendor Section
+//Login - Logout
+						case 'mnuLogon':
+							//parent.main.window.document.body.style.visibility = 'hidden'
+							//temp sjc 2012-12-07
+							parent.main.window.document.body.style.display = 'none'
+//EHD - 2008.02.04 - v2.4.13.1 Added ?LO=TRUE to clear all previous stored user and contract info
+							parent.main.location.href = 'https://secure.phila.gov/ECONTRACT/' + 'Documents/FrmLogin.aspx?LO=TRUE'
+							break
+						case 'mnuShouldI':
+							//parent.main.window.document.body.style.visibility = 'hidden'
+							//temp sjc 2012-12-07
+							parent.main.window.document.body.style.display = 'none'
+							parent.main.location.href = 'https://secure.phila.gov/ECONTRACT/' + 'Inc/ShouldI.aspx'
+							break
+						case 'mnuLogout':
+							gbLoggedIn = false
+							ispDisplayMenuItems(mnuElement.id)
+							ispHighlightMenu(mnuLogon)
+							//parent.main.window.document.body.style.visibility = 'hidden'
+							//temp sjc 2012-12-07
+							parent.main.window.document.body.style.display = 'none'
+							parent.main.location.href = 'https://secure.phila.gov/ECONTRACT/' + 'Documents/frmLogin.aspx?LO=TRUE'
+							break
+//Information - Summary List
+						case 'mnuInfo':
+							//parent.main.window.document.body.style.visibility = 'hidden'
+							//temp sjc 2012-12-07
+							parent.main.window.document.body.style.display = 'none'
+							parent.main.location.href = 'https://secure.phila.gov/ECONTRACT/' + 'Documents/FrmVendorInfo.aspx'
+							divUpdates.style.display = 'none'
+							break
+						case 'mnuSummary':
+							//parent.main.window.document.body.style.visibility = 'hidden'
+							//temp sjc 2012-12-07
+							parent.main.window.document.body.style.display = 'none'
+							parent.main.location.href = 'https://secure.phila.gov/ECONTRACT/' + 'Documents/FrmVendorSummaryList.aspx?LIST=' + sCurrentVendorTab + "'"
+							divSummary.style.display = 'block'
+							divUpdates.style.display = 'none'
+							divDisclosureApp.style.display = 'none'
+							break
+//EHD 2008.06.16 Task.100 Add Next 2 Menu Items
+						case 'mnuApplicationList':
+							parent.main.window.CA_Click()
+							sCurrentVendorTab = 'APP'
+							break
+						case 'mnuContractList':
+							parent.main.window.EC_Click()
+							sCurrentVendorTab = 'CON'
+							break
+//EHD 2008.06.16 Task.100 Add Next 3 Menu Items
+//Disclosure Updates
+						case 'mnuUpdates':
+							//parent.main.window.document.body.style.visibility = 'hidden'
+							//temp sjc 2012-12-07
+							parent.main.window.document.body.style.display = 'none'
+							parent.main.location.href = 'https://secure.phila.gov/ECONTRACT/' + 'Documents/FrmVendorDisclosureList.aspx?LIST=' + sCurrentDisclosureTab + "'"
+							divSummary.style.display = 'none'
+							divUpdates.style.display = 'block'
+							break
+						case 'mnuUpdContrib':
+							parent.main.window.CC_Click()
+							sCurrentDisclosureTab = 'CC'
+							break
+						case 'mnuUpdCEContrib':
+							parent.main.window.CER_Click()
+							sCurrentDisclosureTab = 'CER'
+							break
+
+//Application Disclosure Items
+						case 'mnuDiscloseApp':
+							//parent.main.window.document.body.style.visibility = 'hidden'
+							//temp sjc 2012-12-07
+							parent.main.window.document.body.style.display = 'none'
+							parent.main.location.href = 'https://secure.phila.gov/ECONTRACT/' + 'Documents/FrmVendorApp.aspx'
+							divSummary.style.display = 'none'						
+							break
+						case 'mnuDisConsult':
+							//parent.main.window.document.body.style.visibility = 'hidden'
+							//temp sjc 2012-12-07
+							parent.main.window.document.body.style.display = 'none'
+							parent.main.location.href = 'https://secure.phila.gov/ECONTRACT/' + 'Documents/FrmConsultantDisclose.aspx'
+							break
+						case 'mnuDisContrib':
+							//parent.main.window.document.body.style.visibility = 'hidden'
+							//temp sjc 2012-12-07
+							parent.main.window.document.body.style.display = 'none'
+							parent.main.location.href = 'https://secure.phila.gov/ECONTRACT/' + 'Documents/FrmDisContrib.aspx'
+							break
+						case 'mnuUpdContrib':
+							//parent.main.window.document.body.style.visibility = 'hidden'
+							//temp sjc 2012-12-07
+							parent.main.window.document.body.style.display = 'none'
+							parent.main.location.href = 'https://secure.phila.gov/ECONTRACT/' + 'Documents/FrmDisContrib.aspx'
+							break
+						case 'mnuDisContractor':
+							//parent.main.window.document.body.style.visibility = 'hidden'
+							//temp sjc 2012-12-07
+							parent.main.window.document.body.style.display = 'none'
+							parent.main.location.href = 'https://secure.phila.gov/ECONTRACT/' + 'Documents/FrmDisSubContract.aspx'
+							break
+						case 'mnuDisCEContrib': case 'mnuUpdCEContrib':
+							//parent.main.window.document.body.style.visibility = 'hidden'
+							//temp sjc 2012-12-07
+							parent.main.window.document.body.style.display = 'none'
+							parent.main.location.href = 'https://secure.phila.gov/ECONTRACT/' + 'Documents/frmDisCEContrib.aspx'
+							break
+						case 'mnuDisCEAdvice':
+							//parent.main.window.document.body.style.visibility = 'hidden'
+							//temp sjc 2012-12-07
+							parent.main.window.document.body.style.display = 'none'
+							parent.main.location.href = 'https://secure.phila.gov/ECONTRACT/' + 'Documents/frmDisCEAdvice.aspx'
+							break
+						case 'mnuDisDocuments':
+							//parent.main.window.document.body.style.visibility = 'hidden'
+							//temp sjc 2012-12-07
+							parent.main.window.document.body.style.display = 'none'
+							parent.main.location.href = 'https://secure.phila.gov/ECONTRACT/' + 'Documents/frmAttachDocs.aspx'
+							break
+//Vendor Information Items
+						case 'mnuVendorOverview':
+							mnuElement.className = 'mnuNormal'
+							//window.open('https://secure.phila.gov/ECONTRACT/' + 'documents/frmPDFWindow.aspx?inc=' + 'https://secure.phila.gov/ECONTRACT/' + 'Inc/MDObroWeb.pdf','AcisDoc')
+							window.open('../Inc/MDObroWeb.pdf','AcisDoc')
+							break
+						case 'mnuVendorGenFAQs':
+							mnuElement.className = 'mnuNormal'
+							//window.open('https://secure.phila.gov/ECONTRACT/' + 'documents/frmPDFWindow.aspx?inc=' + 'https://secure.phila.gov/ECONTRACT/' + 'Inc/General FAQs.pdf','AcisDoc')
+							window.open('../Inc/General FAQs.pdf','AcisDoc')
+							break
+						case 'mnuVendorTroubleIssues':
+							mnuElement.className = 'mnuNormal'
+							//window.open('https://secure.phila.gov/ECONTRACT/' + 'documents/frmPDFWindow.aspx?inc=' + 'https://secure.phila.gov/ECONTRACT/' + 'Inc/Troubleshooting.pdf','AcisDoc')
+							window.open('../Inc/Troubleshooting.pdf','AcisDoc')
+							break
+						case 'mnuVendorDisEligibility':
+							mnuElement.className = 'mnuNormal2'
+							break
+						case 'mnuDiscOver':
+							mnuElement.className = 'mnuNormal'
+							//window.open('https://secure.phila.gov/ECONTRACT/' + 'documents/frmPDFWindow.aspx?inc=' + 'https://secure.phila.gov/ECONTRACT/' + 'Inc/Disclosure Overview.pdf','AcisDoc')
+							window.open('../Inc/Disclosure Overview.pdf','AcisDoc')
+							break
+						
+						case 'mnuVendorDefinitions':
+							mnuElement.className = 'mnuNormal'
+							window.open('https://secure.phila.gov/ECONTRACT/' + 'documents/frmPDFWindow.aspx?inc=' + 'https://secure.phila.gov/ECONTRACT/' + 'Inc/Definitions.htm','AcisDoc')
+							break
+						case 'mnuSampleApp':
+							mnuElement.className = 'mnuNormal'
+							//window.open('https://secure.phila.gov/ECONTRACT/' + 'documents/frmPDFWindow.aspx?inc=' + 'https://secure.phila.gov/ECONTRACT/' + 'Inc/Sample App.pdf','AcisDoc')
+							window.open('../Inc/Sample App.pdf','AcisDoc')
+							break
+						case 'mnuVendorProcedureOver':
+							mnuElement.className = 'mnuNormal'
+							//window.open('https://secure.phila.gov/ECONTRACT/' + 'documents/frmPDFWindow.aspx?inc=' + 'https://secure.phila.gov/ECONTRACT/' + 'Inc/Instructional Manual.pdf','AcisDoc')
+							window.open('../Inc/Instructional Manual.pdf','AcisDoc')
+							break
+						case 'mnuReservationRights':
+							mnuElement.className = 'mnuNormal'
+							//window.open('https://secure.phila.gov/ECONTRACT/' + 'documents/frmPDFWindow.aspx?inc=' + 'https://secure.phila.gov/ECONTRACT/' + 'Inc/Reservation of Rights.pdf','AcisDoc')
+							window.open('../Inc/Reservation of Rights.pdf','AcisDoc')
+							break
+						case 'mnuVendorPenalties':
+							mnuElement.className = 'mnuNormal'
+							//window.open('https://secure.phila.gov/ECONTRACT/' + 'documents/frmPDFWindow.aspx?inc=' + 'https://secure.phila.gov/ECONTRACT/' + 'Inc/PenaltiesDebarment.pdf','AcisDoc')
+							window.open('../Inc/PenaltiesDebarment.pdf','AcisDoc')
+							break
+						case 'mnuVendorContactUs':
+							//parent.main.window.document.body.style.visibility = 'hidden'
+							//temp sjc 2012-12-07
+							parent.main.window.document.body.style.display = 'none'
+							parent.main.location.href = 'https://secure.phila.gov/ECONTRACT/' + 'Documents/FrmContactUs.aspx'
+							break
+//Quick Hits
+						case 'mnuQHitsProcurement':
+							window.open('http://mbec.phila.gov/procurement', '_blank')
+							break
+						case 'mnuQHitsMBEC':
+							window.open('http://mbec.phila.gov/home', '_blank')
+							break
+						case 'mnuQHitsEthics':
+							window.open('http://www.phila.gov/ethicsboard/', '_blank')
+							break
+						case 'mnuQHitsRFP':
+							window.open('http://www.phila.gov/rfp/', '_blank')
+							break
+//Extras
+						case 'mnuBill050428':
+							//window.open('https://secure.phila.gov/ECONTRACT/' + 'documents/frmPDFWindow.aspx?inc=' + 'https://secure.phila.gov/ECONTRACT/' + 'Inc/CertifiedCopy05042800.pdf','AcisDoc')
+							window.open('../Inc/CertifiedCopy05042800.pdf','AcisDoc')
+							break
+						case 'mnuTerms':
+							//parent.main.window.document.body.style.visibility = 'hidden'
+							//temp sjc 2012-12-07
+							parent.main.window.document.body.style.display = 'none'
+							parent.main.location.href = 'https://secure.phila.gov/ECONTRACT/' + 'Documents/FrmLglVerify.aspx'
+							break
+					}		//switch
+			}		//ispMenu_onclick
+			
+			
+			function resetMenuStyles() {
+			for (i=0; i<document.all.length; i++) {
+							if (document.all.item(i).className == 'mnuSelected') {
+								  document.all.item(i).className = 'mnuNormal'
+								break
+							}		//if
+						}		//for
+			} // resetmenuStyles
+			
+			// LE - called from frmTopMenu1.ascx - keeps Login style "selected" if top menu login is clicked; otherwise resets all styles
+			function setLoginStyle() {
+			for (i=0; i<document.all.length; i++) {
+							if (document.all.item(i).className == 'mnuSelected') {
+							  if (document.all.item(i).id.match('mnuLogon')){
+							  // do nothing
+							  } else {
+								      document.all.item(i).className = 'mnuNormal'
+								      }
+								break
+							}		//if
+						}		//for
+			} // resetmenuStyles
+			
+			function ispHighlightMenu(obj) {
+				if (gbDisplayDiscloseUpdate == 'true') {
+					mnuUpdates.style.display = 'block'
+				} else {
+					if (parent.main.location.href.search('FrmVendorDisclosureList.aspx') == -1) {
+						mnuUpdates.style.display = 'none'
+						divUpdates.style.display = 'none'
+					} else {
+						divUpdates.style.display = 'block'
+					}		//if
+				}		//if
+
+				if (obj != null) {
+					ispDisplayMenuItems(obj.id)
+					if (obj.className == 'mnuNormal' || obj.className == 'mnuHighlight') {
+						for (i=0; i<document.all.length; i++) {
+							if (document.all.item(i).className == 'mnuSelected') {
+								document.all.item(i).className = 'mnuNormal'
+								break
+							}		//if
+						}		//for
+						if(obj.id == 'mnuUpdates') {
+							obj = mnuUpdContrib
+						}		//if
+						obj.className = 'mnuSelected'
+					}		//if
+				}		//if
+			}		//ispHighlightMenu
+			
+			</script>
+	</head>
+	<body style="MARGIN: 0px" onload="Initialize()" bgcolor="gainsboro">
+		<table id="Table1" style="LEFT: 1px; POSITION: absolute; TOP: 5px" align="left" border="0" cellpadding="0" cellspacing="0" width="98%">
+			<tbody><tr>
+				<td valign="top">&nbsp;</td>
+			</tr>
+			<tr>
+				<td valign="top">
+					<div id="divMain" onmouseover="ispMenu_MouseOver()" style="MARGIN-LEFT: 10px" onclick="ispMenu_onclick()" onmouseout="ispMenu_MouseOut()">
+						<p style="MARGIN-TOP: 5px; MARGIN-BOTTOM: 5px"></p>
+						<p class="mnuNormal" id="mnuGenOverview" title="Overview of legislation and what is available on the website/how things work." style="MARGIN-TOP: 15px">Home</p>
+						<p style="MARGIN-TOP: 10px; MARGIN-BOTTOM: 10px"></p>
+						<p class="mnuNormal" id="mnuNewContract" title="Information on new non-bid contract opportunities" style="DISPLAY: block; FONT-WEIGHT: bold">New Contract Opportunities</p>
+						<!--Vendor Login Section-->
+						<div id="divLogin">
+							<p class="mnuNormal" style="BORDER-BOTTOM: medium none" id="mnuLogon">Login/Register</p>
+						</div>
+						<!--Vendor General Section-->
+						<div id="divVendorSection">
+							<p class="mnuLabel" id="mnuVendorSection">VENDOR SECTION</p>
+						</div>
+						<div id="divLogout">
+							<p class="mnuNormal" id="mnuLogout" style="COLOR: rgb(153,0,0)">Logout</p>
+						</div>
+						<!--Vendor Information Section-->
+						<div id="divVendorInfo" style="DISPLAY: none">
+							<p class="mnuNormal" id="mnuInfo">Vendor Information</p>
+							<p class="mnuNormal" id="mnuSummary">Vendor Record</p>
+							<!--EHD 2008.06.16 Task.100 Add Next 2 Menu Items-->
+							<div id="divSummary" style="DISPLAY: none">
+								<p class="mnuNormal" id="mnuApplicationList" style="MARGIN-TOP: 2px; FONT-SIZE: 9pt; MARGIN-LEFT: 14px; display: block">Applications</p>
+								<p class="mnuNormal" id="mnuContractList" style="MARGIN-TOP: 2px; FONT-SIZE: 9pt; MARGIN-LEFT: 14px; display: block">Contracts</p>
+							</div>
+							<!--Vendor Application Section-->
+							<div id="divDisclosureApp" style="DISPLAY: none">
+								<p class="mnuNormal" id="mnuDiscloseApp" style="MARGIN-LEFT: 7px">Application</p>
+								<p class="mnuNormal" id="mnuDisDocuments" style="MARGIN-TOP: 2px; FONT-SIZE: 9pt; MARGIN-LEFT: 14px">Attach 
+									Documents</p>
+								<p class="mnuNormal" id="mnuDisContrib" style="MARGIN-TOP: 2px; FONT-SIZE: 9pt; MARGIN-LEFT: 14px">Contributions</p>
+								<p class="mnuNormal" id="mnuDisConsult" style="MARGIN-TOP: 2px; FONT-SIZE: 9pt; MARGIN-LEFT: 14px">Consultants</p>
+								<p class="mnuNormal" id="mnuDisContractor" style="MARGIN-TOP: 2px; FONT-SIZE: 9pt; MARGIN-LEFT: 14px">Sub-Contractors</p>
+								<p class="mnuNormal" id="mnuDisCEContrib" style="MARGIN-TOP: 2px; FONT-SIZE: 9pt; MARGIN-LEFT: 14px">Requests</p>
+								<p class="mnuNormal" id="mnuDisCEAdvice" title="City Employee Participation Advice Disclosure" style="MARGIN-TOP: 2px; FONT-SIZE: 9pt; MARGIN-LEFT: 14px">Advice</p>
+							</div>
+							<!--EHD 2008.05.20 Task.100 Add Next 3 Menu Items-->
+							<p class="mnuNormal" id="mnuUpdates" style="display: block">Disclosure Updates</p>
+							<div id="divUpdates" style="DISPLAY: none">
+								<p class="mnuNormal" id="mnuUpdContrib" style="MARGIN-TOP: 2px; FONT-SIZE: 9pt; MARGIN-LEFT: 14px; display: block">Contributions</p>
+								<p class="mnuNormal" id="mnuUpdCEContrib" style="MARGIN-TOP: 2px; FONT-SIZE: 9pt; MARGIN-LEFT: 14px; display: block">Requests</p>
+							</div>
+						</div>
+						<p style="MARGIN-TOP: 10px; MARGIN-BOTTOM: 20px"></p>
+						<div class="mnuDivider"></div>
+						<!--Additional Lists and Reports-->
+						<!--EHD - 12.17.2008 - Task 113 - Changed Wording per City-->
+						<p class="mnuNormal" id="mnuAwardList" title="Notice of Intent to Contract decisions for new non-bid contract opportunities" style="DISPLAY: block; MARGIN-TOP: 30px">Notice of Intent to Contract</p>
+						<p class="mnuNormal" id="mnuAmendmentList" style="DISPLAY: block">Amendments</p>
+						<p class="mnuNormal" id="mnuRenewalList" title="Information on contract and lease renewals">Contract 
+							Renewals</p>
+						<p class="mnuNormal" id="mnuExecutedList" title="Vendor applications, including disclosures, for executed non-bid contracts">Vendor 
+							Applications (for Executed Contracts)</p>
+						<p class="mnuNormal" style="BORDER-BOTTOM: medium none" id="mnuReports">Reports</p>
+					</div>
+				</td>
+			</tr>
+		</tbody></table>
+		<div></div>
+	
+
+</body></html>

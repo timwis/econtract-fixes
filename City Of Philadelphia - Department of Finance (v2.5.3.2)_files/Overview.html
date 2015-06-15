@@ -1,0 +1,747 @@
+<html xmlns:o="" xmlns:st1=""><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Expires" content="-1">
+		<meta content="JavaScript" name="vs_defaultClientScript">
+		<!-- <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">-->
+		<meta content="Microsoft Visual Studio .NET 7.1" name="GENERATOR">
+		<meta content="VisualStudio.HTML" name="ProgId">
+		<meta content="Microsoft Visual Studio .NET 7.1" name="Originator">
+		<link href="frmMenu_data/Font.css" type="text/css" rel="stylesheet">
+			<link href="Overview_data/Object.css" type="text/css" rel="stylesheet">
+				<script language="jscript">
+		
+		//$(document).ready(function() {
+		
+		
+	 function Initialize() {
+		isLoaded()
+		PageLoaded()
+//		window.focus()
+	}		//initialize
+	
+	function PageLoaded() {
+			if (parent.MenuWin.ispHighlightMenu) {
+				parent.MenuWin.ispHighlightMenu(parent.MenuWin.mnuGenOverview)
+			} else {
+				setTimeout('PageLoaded()',500)
+			}
+}		//PageLoaded
+
+	function isLoaded() {
+		if (parent.MenuWin.document.readyState != 'complete') {				
+			setTimeout('isLoaded()',500)
+		} else {
+			if (parent.main.document.readyState != 'complete') {
+					setTimeout('isLoaded()',500)
+			}		//if
+		}		//if
+	}		//isLoaded 
+	
+	function ispMouseOver() {
+//alert(event.srcElement.innerHTML + '   ' + event.srcElement.parentElement.className)
+				if (event.srcElement.className == 'ovrItem') {
+					event.srcElement.className = 'ovrHighlight'
+				} else if (event.srcElement.parentElement.className == 'ovrItem')	{
+					event.srcElement.parentElement.className = 'ovrHighlight'
+				} else if (event.srcElement.name == "HouseBill") {
+					event.srcElement.className = 'ovrLink'
+				} else if (event.srcElement.name == "Settlement") {
+					event.srcElement.className = 'ovrLink2'
+				}
+			}
+
+	function ispMouseOut() {
+				//status = ''
+				if (event.srcElement.className == 'ovrHighlight') {
+					event.srcElement.className = 'ovrItem'
+				} else if (event.srcElement.name == "HouseBill") {
+					event.srcElement.className = 'lblTextBlack10pt'
+				} else if (event.srcElement.name == "Settlement") {
+					event.srcElement.className = 'lblTextBlue10pt'
+				}
+			}
+
+	function clickLink(linkId){
+	//alert('Hit clickMenu: ' + linkId)
+	if (linkId) {
+	} else {
+		linkId = event.srcElement.id
+	} // if
+			
+	//alert(linkId)
+	switch(linkId) {
+		case 'Search_Apply':
+			parent.main.window.document.body.style.visibility = 'hidden'
+			parent.main.location.href = 'https://secure.phila.gov/ECONTRACT/' + 'Documents/FrmOpportunityList.aspx'
+			parent.MenuWin.mnuNewContract.click()
+			//window.open('http://www.phila.gov', '_blank')
+			break
+		case 'Awards':
+			parent.main.window.document.body.style.visibility = 'hidden'
+			parent.main.location.href = 'https://secure.phila.gov/ECONTRACT/' + 'Documents/frmAwardList.aspx'
+			parent.MenuWin.mnuAwardList.click()
+			break
+		case 'Executed':
+			parent.main.window.document.body.style.visibility = 'hidden'
+			parent.main.location.href = 'https://secure.phila.gov/ECONTRACT/' + 'Documents/frmExecutedList.aspx'
+			break
+		case 'Renewal':
+			parent.main.window.document.body.style.visibility = 'hidden'
+			parent.main.location.href = 'https://secure.phila.gov/ECONTRACT/' + 'Documents/frmRenewalList.aspx'
+			break
+		case 'Amend':
+			parent.main.window.document.body.style.visibility = 'hidden'
+			parent.main.location.href = 'https://secure.phila.gov/ECONTRACT/' + 'Documents/frmAmendmentList.aspx'
+			break
+		case 'Report':
+			parent.main.window.document.body.style.visibility = 'hidden'
+			parent.main.location.href = 'https://secure.phila.gov/ECONTRACT/' + 'Documents/Reports.aspx'
+			break
+		case 'Debarred':
+			//parent.main.window.document.body.style.visibility = 'hidden'
+			window.open('../Inc/debar.pdf')
+			break
+		case 'HouseBill':
+			
+
+window.open('http://www.legis.state.pa.us/cfdocs/billinfo/billinfo.cfm?syear=2009&sind=0&body=H&type=B&BN=1828', '_blank')
+			break
+		case 'Settlement':
+			//parent.main.window.document.body.style.visibility = 'hidden'
+			window.open('../Inc/Settlement.pdf')
+			break
+					}		//switch
+		} // function
+
+		//}); // end $(document).ready
+				</script>
+		<!--<body onload="Initialize()" MS_POSITIONING="FlowLayout">-->
+	</head>
+	<body ms_positioning="FlowLayout" onload="Initialize()">
+		<form name="Form1" method="post" action="Overview.aspx" id="Form1">
+<input name="__VIEWSTATE" value="dDwxMTkzMDE5ODc5Ozs+7RYGNQ/k+wzjf2lm0KWHmd6cSjw=" type="hidden">
+
+			
+<link href="frmMenu_data/Font.css" type="text/css" rel="stylesheet">
+<link href="Overview_data/Object.css" type="text/css" rel="stylesheet">
+<script language="jscript">
+
+function ShowMenu(id){
+	var Obj = document.getElementById(id)
+	if(Obj){
+		Obj.style.display=''
+
+//Dropdown lists in IE 6 stay on top of dropdown menus
+//Turn off Dropdown lists on IE 6
+		if (parent.gBrowserIE7 == false) {
+			var i = 0
+			var objDD = document.body.getElementsByTagName('SELECT')
+			for (i=0; i<objDD.length; i++) {
+				objDD[i].style.visibility = 'hidden'
+			}		//for
+		}		//if
+	}		//if
+//alert(objDD[i].offsetHeight + '  ' + objDD[i].clientHeight)
+//divTmuAbout.style.clientHeight
+//	alert(Obj)
+	ActiveMenu()
+}
+
+function ActiveMenu(e) { 
+    if (!e) {var e = window.event} 
+    if (!e) {return} 
+    if (e.srcElement) {var Obj = e.srcElement} 
+    
+    if (Obj.nodeName != 'DIV') {
+		if (Obj.className == 'mnuNormalTop'){ 
+			Obj.className = 'mnuHighlightTop' 
+		} //if
+	} //if 
+} //ActiveMenu 
+ 
+/* LE - new function - turns off highlighting of drop down link */ 
+function DeActivateMenu(e) { 
+  if (!e) {var e = window.event}
+  if (!e) {return} 
+  if (e.srcElement) {var Obj = e.srcElement} 
+  if (Obj.className == 'mnuHighlightTop') { 
+    Obj.className = 'mnuNormalTop' 
+  } //if 
+} // DeActivateMenu 
+ 
+
+function CloseThisMenu(id){
+	var Obj = document.getElementById(id)
+	if(Obj){
+		Obj.style.display='none'
+//Dropdown lists in IE 6 stay on top of dropdown menus
+//Turn on Dropdown lists on IE 6
+		if (parent.gBrowserIE7 == false) {
+			var i = 0
+			var objDD = document.body.getElementsByTagName('SELECT')
+			for (i=0; i<objDD.length; i++) {
+				objDD[i].style.visibility = 'visible'
+			}		//for
+		}		//if
+	}		//if
+}		//CloseThisMenu
+
+function ResetThisMenu(id){
+	var Obj = document.getElementById(id)
+	if(Obj){Obj.className = 'mnuNormalTop'}
+}
+
+function CloseMenu(e){
+	if (!e) {var e = window.event}
+
+	CloseThisMenu('divTmuAbout')
+	CloseThisMenu('divTmuDirections')
+	CloseThisMenu('divTmuDisclosure')
+	CloseThisMenu('divTmuLinks')
+	CloseThisMenu('divTmuContactUs')
+	CloseThisMenu('divTmuTerms')
+	ResetThisMenu('divTmuAbout')
+	ResetThisMenu('divTmuDirections')
+	ResetThisMenu('divTmuDisclosure')
+	ResetThisMenu('divTmuLinks')
+	ResetThisMenu('divTmuContactUs') 
+	ResetThisMenu('divTmuTerms')
+
+//	parent.DocWin.NormalMenu(e)
+}		//CloseMenu
+
+// window.event.srcElement.parentElement
+function clickMenu(mnuElement){
+	if (mnuElement) {
+	} else {
+		mnuElement = event.srcElement
+	} // if
+	//ispHighlightMenu(mnuElement)
+		
+	switch(mnuElement.id) {
+	
+//Login - Logout
+					case 'mnuQHitsBusinessServices':
+							window.open('http://business.phila.gov/Pages/Home.aspx', '_blank')
+							break
+					case 'tmuLogon':
+							if (mnuElement.innerHTML == 'Login/Register') {
+								mnuElement.className = 'mnuNormalTop'
+								parent.MenuWin.setLoginStyle()
+							} // if
+							parent.main.window.document.body.style.visibility = 'hidden'
+							parent.main.location.href = 'https://secure.phila.gov/ECONTRACT/' + 'Documents/frmLogin.aspx?LO=TRUE'	
+							break
+					//case 'tmuLogout':
+					//		parent.main.window.document.body.style.visibility = 'hidden'
+					//		parent.main.location.href = 'https://secure.phila.gov/ECONTRACT/' + 'Documents/frmLogin.aspx?LO=TRUE'
+					//		break
+
+//Vendor Information Items
+						case 'mnuVendorOverview':
+							mnuElement.className = 'mnuNormalTop'
+							//window.open('https://secure.phila.gov/ECONTRACT/' + 'documents/frmPDFWindow.aspx?inc=' + 'https://secure.phila.gov/ECONTRACT/' + 'Inc/MDObroWeb.pdf','AcisDoc')
+							window.open('../Inc/MDObroWeb.pdf','AcisDoc')
+							break
+						case 'mnuTerms':
+							mnuElement.className = 'mnuNormalTop'
+							parent.main.window.document.body.style.visibility = 'hidden'
+							parent.main.location.href = 'https://secure.phila.gov/ECONTRACT/' + 'Documents/FrmLglVerify.aspx'
+							break
+						case 'mnuVendorGenFAQs':
+							mnuElement.className = 'mnuNormalTop'
+							//window.open('https://secure.phila.gov/ECONTRACT/' + 'documents/frmPDFWindow.aspx?inc=' + 'https://secure.phila.gov/ECONTRACT/' + 'Inc/General FAQs.pdf','AcisDoc')
+							//window.open('https://secure.phila.gov/ECONTRACT/' + 'inc/General FAQs.pdf','AcisDoc')
+							window.open('../inc/General FAQs.pdf','AcisDoc')
+							break
+						case 'mnuVendorTroubleIssues':
+							mnuElement.className = 'mnuNormalTop'
+							//window.open('https://secure.phila.gov/ECONTRACT/' + 'documents/frmPDFWindow.aspx?inc=' + 'https://secure.phila.gov/ECONTRACT/' + 'Inc/Troubleshooting.pdf','AcisDoc')
+							window.open('../Inc/Troubleshooting.pdf','AcisDoc')
+							break		
+						case 'mnuDiscOver':
+							mnuElement.className = 'mnuNormalTop'
+							//window.open('https://secure.phila.gov/ECONTRACT/' + 'documents/frmPDFWindow.aspx?inc=' + 'https://secure.phila.gov/ECONTRACT/' + 'Inc/Disclosure Overview.pdf','AcisDoc')
+							window.open('../Inc/Disclosure Overview.pdf','AcisDoc')
+							break		
+						case 'mnuVendorDefinitions':
+							mnuElement.className = 'mnuNormalTop'
+							window.open('https://secure.phila.gov/ECONTRACT/' + 'documents/frmPDFWindow.aspx?inc=' + 'https://secure.phila.gov/ECONTRACT/' + 'Inc/Definitions.htm','AcisDoc')
+							break
+						case 'mnuDisclosureNotice':
+							mnuElement.className = 'mnuNormalTop'
+							//window.open('https://secure.phila.gov/ECONTRACT/' + 'documents/frmPDFWindow.aspx?inc=' + 'https://secure.phila.gov/ECONTRACT/' + 'Inc/Disclosure Notice.pdf','AcisDoc')
+							window.open('../Inc/Disclosure Notice.pdf','AcisDoc')
+							break	
+						case 'mnuDiscloseEligibilityFAQs':
+							mnuElement.className = 'mnuNormalTop'
+							//window.open('https://secure.phila.gov/ECONTRACT/' + 'documents/frmPDFWindow.aspx?inc=' + 'https://secure.phila.gov/ECONTRACT/' + 'Inc/DiscElig FAQs.pdf','AcisDoc')
+							window.open('../Inc/DiscElig FAQs.pdf','AcisDoc')
+							break
+						case 'mnuSubcontractorDisc':
+							mnuElement.className = 'mnuNormalTop'
+							//window.open('https://secure.phila.gov/ECONTRACT/' + 'documents/frmPDFWindow.aspx?inc=' + 'https://secure.phila.gov/ECONTRACT/' + 'Inc/SubcontractorDisc.pdf','AcisDoc')
+							window.open('../Inc/SubcontractorDisc.pdf','AcisDoc')
+							break						
+						case 'mnuSampleApp':
+							mnuElement.className = 'mnuNormalTop'
+							//window.open('https://secure.phila.gov/ECONTRACT/' + 'documents/frmPDFWindow.aspx?inc=' + 'https://secure.phila.gov/ECONTRACT/' + 'Inc/Sample App.pdf','AcisDoc')
+							window.open('../Inc/Sample App.pdf','AcisDoc')
+							break
+						case 'mnuInstructions':
+							mnuElement.className = 'mnuNormalTop'
+							//window.open('https://secure.phila.gov/ECONTRACT/' + 'documents/frmPDFWindow.aspx?inc=' + 'https://secure.phila.gov/ECONTRACT/' + 'Inc/Instructional Manual.pdf','AcisDoc')
+							window.open('../Inc/Instructional Manual.pdf','AcisDoc')
+							break
+						case 'mnuPhilaCode':
+							window.open('http://www.amlegal.com/nxt/gateway.dll/Pennsylvania/philadelphia_pa/title17contractsandprocurement/chapter17-1400non-competitivelybidcontra?f=templates$fn=default.htm$3.0$vid=amlegal:philadelphia_pa$anc=', '_blank')
+							break
+							case 'mnuHomeRule':
+							window.open('http://www.amlegal.com/nxt/gateway.dll/Pennsylvania/philadelphia_pa/philadelphiahomerulecharter?f=templates$fn=default.htm$3.0$vid=amlegal:philadelphia_pa$anc=', '_blank')
+							break
+						case 'mnuReservationRights':
+							mnuElement.className = 'mnuNormalTop'
+							//window.open('https://secure.phila.gov/ECONTRACT/' + 'documents/frmPDFWindow.aspx?inc=' + 'https://secure.phila.gov/ECONTRACT/' + 'Inc/Reservation of Rights.pdf','AcisDoc')
+							window.open('../Inc/Reservation of Rights.pdf','AcisDoc')
+							break
+						case 'mnuVendorPenalties':
+							mnuElement.className = 'mnuNormalTop'
+							//window.open('https://secure.phila.gov/ECONTRACT/' + 'documents/frmPDFWindow.aspx?inc=' + 'https://secure.phila.gov/ECONTRACT/' + 'Inc/PenaltiesDebarment.pdf','AcisDoc')
+							window.open('../Inc/PenaltiesDebarment.pdf','AcisDoc')
+							break
+						case 'mnuHealthInformation':
+							mnuElement.className = 'mnuNormalTop'
+							//window.open('https://secure.phila.gov/ECONTRACT/' + 'documents/frmPDFWindow.aspx?inc=' + 'https://secure.phila.gov/ECONTRACT/' + 'Inc/Terms Relating To PHI 041311.pdf','AcisDoc')
+							window.open('../Inc/Terms Relating To PHI 041311.pdf','AcisDoc')
+							break
+						case 'mnuBenefitsOrdinances':
+							mnuElement.className = 'mnuNormalTop'
+							//window.open('https://secure.phila.gov/ECONTRACT/' + 'documents/frmPDFWindow.aspx?inc=' + 'https://secure.phila.gov/ECONTRACT/' + 'Inc/Reservation of Rights.pdf','AcisDoc')
+							window.open('../Inc/Benefits Ordinances.pdf','AcisDoc')
+							break
+							
+						
+//Quick Hits
+						case 'mnuQHitsProcurement':
+							window.open('http://mbec.phila.gov/procurement', '_blank')
+							break
+						case 'mnuQHitsMBEC':
+							window.open('http://oeo.phila.gov', '_blank')
+							break
+						case 'mnuQHitsEthics':
+							window.open('http://www.phila.gov/ethicsboard/', '_blank')
+							break
+						case 'mnuQHitsRFP':
+							window.open('http://www.phila.gov/rfp/', '_blank')
+							break
+						case 'mnuQHitsIntegrityWorks':
+							window.open('http://www.phila.gov/integrityworks/', '_blank')
+							break
+//Extras
+						case 'tmuContactUs':
+							mnuElement.className = 'mnuNormalTop'
+							parent.main.window.document.body.style.visibility = 'hidden'
+							parent.MenuWin.resetMenuStyles()
+							parent.main.location.href = 'https://secure.phila.gov/ECONTRACT/' + 'Documents/frmContactUs.aspx'
+							break
+					}		//switch
+		} // function
+		
+		function ispHighlightMenu(obj) {
+		//alert('Found ispHighlightMenu()')
+		var from_top_menu = false
+		//alert(obj.id)
+				if (obj != null) {
+				//	ispDisplayMenuItems(obj.id)
+					if (obj.className == 'mnuNormalTop' || obj.className == 'mnuHighlightTop') {
+					
+					//alert('object\'s class name: ' + obj.className)
+						for (i=0; i<document.all.length; i++) {
+						//alert('This is an item in the document:' + document.all.item(i).id)
+							if (document.all.item(i).className == 'mnuSelectedTop') {
+							// last link pressed was from top menu, set a flag here
+							from_top_menu = true
+								document.all.item(i).className = 'mnuNormalTop'
+								break
+							}		//if
+						}		//for
+						// if flag not set, call side menu's ispHighlightMenu
+						if (!from_top_menu) {
+						parent.MenuWin.resetMenuStyles()
+						//parent.MenuWin.test()
+						}
+						obj.className = 'mnuSelectedTop'
+					//	alert(obj.className)
+					}		//if
+				}		//if
+			}		//ispHighlightMenu
+			
+			/* function aspMouseover(){
+			//alert('rolling over linkbutton\'s TD')
+			event.srcElement.className = 'mnuHighlightTop'
+			}
+			
+			function aspMouseout(){
+			//alert('rolled off linkbutton\'s TD')
+			event.srcElement.className = 'mnuNormalTop'
+			} */
+
+</script>
+<!--<BODY onload="Initialize()">-->
+<div id="TopMenu" style="DISPLAY: block; LEFT: 0px; POSITION: relative; TOP: 0px">
+	<table id="tblMain" onmouseout="CloseMenu()" style="BORDER-RIGHT: #0056ac 2px solid; BORDER-BOTTOM: #0056ac 2px solid" height="35" align="left" cellpadding="0" cellspacing="0" width="100%">
+		<tbody><tr class="docMenuBgColor" height="35" align="left"> <!--LE - 11.16.2007 - V2.3.1.1 -->
+			<!--<TD style="vertical-align: middle" width=10px id="spcAbout" class="mnuNormalTop">&nbsp;</td>-->
+			<td onmouseover="ShowMenu('divTmuAbout')" onmouseout="DeActivateMenu()" height="35" valign="middle" width="80"><p id="tmuAbout" class="mnuNormalTop" style="PADDING-BOTTOM: 0px; MARGIN: 0px 0px 0px 15px; BORDER-BOTTOM: 0px" onmouseover="ShowMenu('divTmuAbout')" onmouseout="DeActivateMenu()">About</p>
+			</td>
+			<td style="VERTICAL-ALIGN: middle" width="1"><p id="lblLine1" class="lblMenuDiv" align="center">|</p>
+			</td>
+			<td style="VERTICAL-ALIGN: middle" onmouseover="ShowMenu('divTmuDirections')" onmouseout="DeActivateMenu()" width="115"><p id="tmuDirections" class="mnuNormalTop" onmouseover="ShowMenu('divTmuDirections')" onmouseout="DeActivateMenu()" style="PADDING-BOTTOM: 0px; MARGIN: 0px 0px 0px 15px; BORDER-BOTTOM: 0px">Instructions</p>
+			</td>
+			<td style="VERTICAL-ALIGN: middle" width="1"><p id="lblLine2" class="lblMenuDiv" align="center">|</p>
+			</td>
+			<td style="VERTICAL-ALIGN: middle" onmouseover="ShowMenu('divTmuDisclosure')" onmouseout="DeActivateMenu()" width="175"><p id="tmuDisclosure" class="mnuNormalTop" onmouseover="ShowMenu('divTmuDisclosure')" onmouseout="DeActivateMenu()" style="PADDING-BOTTOM: 0px; MARGIN: 0px 0px 0px 15px; BORDER-BOTTOM: 0px">Disclosure/Eligibility</p>
+			</td>
+			<td style="VERTICAL-ALIGN: middle" width="1"><p id="lblLine3" class="lblMenuDiv" align="center">|</p>
+			</td>
+			<td style="VERTICAL-ALIGN: middle" onmouseover="ShowMenu('divTmuLinks')" onmouseout="DeActivateMenu()" width="85"><p id="tmuLinks" class="mnuNormalTop" onmouseover="ShowMenu('divTmuLinks')" onmouseout="DeActivateMenu()" style="PADDING-BOTTOM: 0px; MARGIN: 0px 0px 0px 15px; BORDER-BOTTOM: 0px">Links</p>
+			</td>
+			<td style="VERTICAL-ALIGN: middle" width="1"><p id="lblLine4" class="lblMenuDiv" align="center">|</p>
+			</td>
+			<!--*****-->
+			<td style="PADDING-BOTTOM: 0px; MARGIN: 0px 0px 0px 15px; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 0px" width="140">
+				<p onmouseover="ShowMenu()" onmouseout="DeActivateMenu()" onclick="clickMenu()" id="tmuContactUs" class="mnuNormalTop" style="PADDING-BOTTOM: 0px; MARGIN: 0px 0px 0px 15px; BORDER-BOTTOM: 0px">Need Assistance?</p></td>
+			<td style="VERTICAL-ALIGN: middle" width="1"><p id="lblLine5" class="lblMenuDiv" align="center">|</p>
+			</td>
+			<td style="PADDING-BOTTOM: 0px; MARGIN: 0px 0px 0px 15px; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 0px" width="120">
+				<p id="tmuLogon" class="mnuNormalTop" onclick="clickMenu()" onmouseover="ShowMenu()" onmouseout="DeActivateMenu()" style="PADDING-BOTTOM: 0px; MARGIN: 0px 0px 0px 15px; BORDER-BOTTOM: 0px">Login/Register</p>
+				<!--<P id="tmuLogout" class="lblMenuLogout" onclick="clickMenu()" onMouseover="ShowMenu()" onMouseout="DeActivateMenu()"
+				style="PADDING-BOTTOM: 0px; MARGIN: 0px 0px 0px 15px; BORDER-BOTTOM: 0px; display: none">Logout</P> -->
+			</td>
+			<td align="right">&nbsp;</td>
+		</tr>
+	</tbody></table>
+</div>
+<!-- onclick="ShowScreen()" for divTmuAbout -->
+<div id="divTmuAbout" onmouseout="CloseMenu()" onmouseover="ShowMenu('divTmuAbout')" style="DISPLAY: none; LEFT: -15px; WIDTH: 200px; CURSOR: pointer; POSITION: absolute; TOP: 23px">
+	<table id="tblAbout" onmouseout="" cellpadding="0" cellspacing="0" width="100%">
+		<tbody><tr class="docMenuBgColor" height="21">
+			<td id="mnuVendorOverview" class="mnuNormalTop" onclick="clickMenu()" onmouseover="ActiveMenu()" onmouseout="DeActivateMenu()">Overview</td>
+		</tr>
+		<tr class="docMenuBgColor" height="21">
+			<td id="mnuPhilaCode" class="mnuNormalTop" onclick="clickMenu()" onmouseover="ActiveMenu()" onmouseout="DeActivateMenu()">The Philadelphia Code</td>
+		</tr>
+		<tr class="docMenuBgColor" height="21">
+			<td id="mnuHomeRule" class="mnuNormalTop" onclick="clickMenu()" onmouseover="ActiveMenu()" onmouseout="DeActivateMenu()">Home Rule Charter</td>
+		</tr>
+		<tr class="docMenuBgColor" height="21">
+			<td id="mnuTerms" class="mnuNormalTop" onclick="clickMenu()" onmouseover="ActiveMenu()" onmouseout="DeActivateMenu()">Terms of Use</td>
+		</tr>
+		<tr class="docMenuBgColor" height="21">
+			<td id="mnuVendorPenalties" class="mnuNormalTop" onclick="clickMenu()" onmouseover="ActiveMenu()" onmouseout="DeActivateMenu()">Penalties/Disbarment</td>
+		</tr>
+		<tr class="docMenuBgColor" height="21">
+			<td id="mnuHealthInformation" class="mnuNormalTop" onclick="clickMenu()" onmouseover="ActiveMenu()" onmouseout="DeActivateMenu()">Terms and Conditions Relating to Protected Health Information</td>
+		</tr>
+		<tr class="docMenuBgColor" height="21">
+			<td id="mnuBenefitsOrdinances" class="mnuNormalTop" style="BORDER-BOTTOM:medium none" onclick="clickMenu()" onmouseover="ActiveMenu()" onmouseout="DeActivateMenu()">Minimum Wage and Equal Benefits Ordinances
+					Impacting Some City Contractors</td>
+		</tr>
+		<tr class="docMenuBgColor" height="21">
+			<td id="mnuReservationRights" class="mnuNormalTop" style="BORDER-BOTTOM:medium none" onclick="clickMenu()" onmouseover="ActiveMenu()" onmouseout="DeActivateMenu()">Reservation 
+					of Rights</td>
+		</tr>
+	</tbody></table>
+</div>
+<div id="divTmuDirections" onmouseover="ShowMenu('divTmuDirections')" onmouseout="CloseMenu()" onclick="" style="DISPLAY: none; LEFT: 68px; WIDTH: 200px; CURSOR: pointer; POSITION: absolute; TOP: 23px">
+	<table id="tblDirections" onmouseout="" cellpadding="0" cellspacing="0" width="100%">
+		<!--<TR class="docMenuBgColor" height="2">
+			<TD>&nbsp;
+			</TD>
+		</TR>-->
+		<tbody><tr class="docMenuBgColor" height="21">
+			<td id="mnuInstructions" class="mnuNormalTop" onclick="clickMenu()" onmouseover="ActiveMenu()" onmouseout="DeActivateMenu()">Instructions Manual</td>
+		</tr>
+		<tr class="docMenuBgColor" height="21">
+			<td id="mnuSampleApp" class="mnuNormalTop" onclick="clickMenu()" onmouseover="ActiveMenu()" onmouseout="DeActivateMenu()">Sample Application</td>
+		</tr>
+		<tr class="docMenuBgColor" height="21">
+			<td id="mnuVendorGenFAQs" class="mnuNormalTop" onclick="clickMenu()" onmouseover="ActiveMenu()" onmouseout="DeActivateMenu()">General FAQs</td>
+		</tr>
+		<tr class="docMenuBgColor" height="21">
+			<td id="mnuVendorTroubleIssues" class="mnuNormalTop" style="BORDER-BOTTOM:medium none" onclick="clickMenu()" onmouseover="ActiveMenu()" onmouseout="DeActivateMenu()">Troubleshooting 
+					Issues</td>
+		</tr>
+	</tbody></table>
+</div>
+<div id="divTmuDisclosure" onmouseover="ShowMenu('divTmuDisclosure')" onmouseout="CloseMenu()" onclick="" style="DISPLAY: none; LEFT: 186px; WIDTH: 200px; CURSOR: pointer; POSITION: absolute; TOP: 23px">
+	<table id="tblDisclosure" onmouseout="" cellpadding="0" cellspacing="0" width="100%">
+		<tbody><tr class="docMenuBgColor" height="21">
+			<td id="mnuDiscOver" class="mnuNormalTop" onclick="clickMenu()" onmouseover="ActiveMenu()" onmouseout="DeActivateMenu()">Disclosure Overview</td>
+		</tr>
+		<tr class="docMenuBgColor" height="21">
+			<td id="mnuVendorDefinitions" class="mnuNormalTop" onclick="clickMenu()" onmouseover="ActiveMenu()" onmouseout="DeActivateMenu()">Disclosure Definitions</td>
+		</tr>
+		<tr class="docMenuBgColor" height="21">
+			<td id="mnuDiscloseEligibilityFAQs" class="mnuNormalTop" onclick="clickMenu()" onmouseover="ActiveMenu()" onmouseout="DeActivateMenu()">Disclosure / Eligibility FAQs</td>
+		</tr>
+		<tr class="docMenuBgColor" height="21">
+			<td id="mnuSubcontractorDisc" class="mnuNormalTop" onclick="clickMenu()" onmouseover="ActiveMenu()" onmouseout="DeActivateMenu()">Subcontractor Disclosure</td>
+		</tr>
+		<tr class="docMenuBgColor" height="21">
+			<td id="mnuDisclosureNotice" class="mnuNormalTop" style="BORDER-BOTTOM:medium none" onclick="clickMenu()" onmouseover="ActiveMenu()" onmouseout="DeActivateMenu()">Disclosure 
+					Notice</td>
+		</tr>
+	</tbody></table>
+</div> <!--LE 11.19.2007 - V2.3.1.1 -->
+<div id="divTmuLinks" onmouseover="ShowMenu('divTmuLinks')" onmouseout="CloseMenu()" onclick="" style="DISPLAY: none; LEFT: 363px; WIDTH: 150px; CURSOR: pointer; POSITION: absolute; TOP: 23px">
+	<table id="tblLinks" onmouseout="" cellpadding="0" cellspacing="0" width="100%">
+		<tbody><tr class="docMenuBgColor" height="21">
+			<td id="mnuQHitsBusinessServices" class="mnuNormalTop" onclick="clickMenu()" onmouseover="ActiveMenu()" onmouseout="DeActivateMenu()">Business Services</td>
+		</tr>
+		<tr class="docMenuBgColor" height="21">
+			<td id="mnuQHitsProcurement" class="mnuNormalTop" onclick="clickMenu()" onmouseover="ActiveMenu()" onmouseout="DeActivateMenu()">Procurement</td>
+		</tr>
+		<tr class="docMenuBgColor" height="21">
+			<td id="mnuQHitsMBEC" class="mnuNormalTop" onclick="clickMenu()" onmouseover="ActiveMenu()" onmouseout="DeActivateMenu()">Office of Economic Opportunity</td>
+		</tr>
+		<tr class="docMenuBgColor" height="21">
+			<td id="mnuQHitsEthics" class="mnuNormalTop" onclick="clickMenu()" onmouseover="ActiveMenu()" onmouseout="DeActivateMenu()">Board of Ethics</td>
+		</tr>
+		<tr class="docMenuBgColor" height="21">
+			<td id="mnuQHitsRFP" class="mnuNormalTop" onclick="clickMenu()" onmouseover="ActiveMenu()" onmouseout="DeActivateMenu()">RFPs Online</td>	
+		</tr>
+		<tr class="docMenuBgColor" height="21">
+			<td id="mnuQHitsIntegrityWorks" class="mnuNormalTop" style="BORDER-BOTTOM:medium none" onclick="clickMenu()" onmouseover="ActiveMenu()" onmouseout="DeActivateMenu()">Integrity Works</td>	
+		</tr>
+		
+	</tbody></table>
+</div>
+<div id="divTmuContactUs" onmouseout="CloseMenu()" onclick="clickMenu()" style="DISPLAY: none; LEFT: 391px; CURSOR: pointer; POSITION: absolute; TOP: 23px"></div>
+<div id="divTmuTerms" onmouseout="CloseMenu()" onclick="clickMenu()" style="DISPLAY: none; LEFT: 517px; CURSOR: pointer; POSITION: absolute; TOP: 23px"></div>
+<div id="divTmuLogon" onmouseout="CloseMenu()" onclick="clickMenu()" style="DISPLAY: none; LEFT: 643px; CURSOR: pointer; POSITION: absolute; TOP: 23px"></div>
+<br>
+<br>
+<!--</body>-->
+<script language="jscript">
+ var sLog = false
+ 
+
+if (sLog == true) {
+	document.getElementById('tmuLogon').innerHTML = 'Logout'
+//alert('Flipped to say "Logout"')
+//document.getElementById("tmuLogout").style.display='inline'
+//document.getElementById("tmuLogon").style.display='none'
+} else {
+document.getElementById('tmuLogon').innerHTML = 'Login/Register'
+//alert('Flipped to say "Login"')
+//document.getElementById("tmuLogout").style.display='none'
+//document.getElementById("tmuLogon").style.display='inline' 
+}
+
+
+
+</script>
+
+			<div id="divDoc" class="divContent" style="MARGIN: 30px 0px 0px 20px; PADDING-TOP: 0px">
+				<!--<P class="ovrBrowserMsg">This site requires Internet Explorer 5.0 or greater 
+					running on Microsoft Windows to ensure full functionality</P>-->
+				<div class="divOverview" id="DIV1" align="center">
+					<table border="0" width="90%">
+						<tbody><tr height="60">
+							<td colspan="2" class="ovrTitle" align="center" valign="middle"><b>eContract Philly</b></td>
+						</tr>
+						<tr height="0">
+							<td colspan="2"></td>
+						</tr>
+						<tr>
+							<td class="ovrIntroMsg" colspan="2">eContract Philly is an online 
+
+interface to 
+								support the City in purchasing non-competitively bid services. 
+
+This website 
+								serves as the gateway for the public and for vendors interested 
+
+in applying for 
+								contract opportunities.
+							</td>
+						</tr>
+						<tr height="20">
+							<td colspan="2"></td>
+						</tr>
+						<tr>
+							<td class="ovrTitle2" colspan="2">On this site, you can:</td>
+						</tr>
+						<tr height="30">
+							<!--<TD align="right">§</TD>-->
+							<td id="Search_Apply" class="ovrItem" onclick="clickLink('Search_Apply')" onmouseover="ispMouseOver()" onmouseout="ispMouseOut()">Search and apply for new non-bid 
+
+<u>contract 
+									opportunities</u> available throughout City 
+
+government</td>
+						</tr>
+						<tr height="30">
+							<!--EHD - 12.17.2008 - Task 113 - Changed Wording per City-->
+							<td id="Awarded" class="ovrItem" onclick="clickLink('Awards')" onmouseover="ispMouseOver()" onmouseout="ispMouseOut()">Find out with whom the City intends 
+
+to <u>enter into 
+									contracts</u>, including the rationale behind selecting 
+
+that Applicant
+							</td>
+						</tr>
+						<tr height="30"> <!-- LE - 11.21.2007 - V.2.3.1.5 -->
+							<td id="AppNames" class="ovrItem" onclick="clickLink('Executed')" onmouseover="ispMouseOver()" onmouseout="ispMouseOut()">See the names and disclosures 
+
+submitted by all <u>applicants</u>
+								for non-bid contracts</td>
+						</tr>
+						<!--					<TR>
+						<TD class="ovrItem" align=center>- AND -
+						</TD>
+					</TR>
+					<TR height="30">
+						<TD class="ovrItem" onclick="clickLink('Executed')" onmouseover="ispMouseOver()" 
+
+onmouseout="ispMouseOut()">Access the <U>applications</U> submitted by individuals and businesses on non-bid contracts</TD>
+					</TR>-->
+						<tr height="30">
+							<td class="ovrItem" onmouseover="ispMouseOver()" onmouseout="ispMouseOut()">View
+								<u onclick="clickLink('Renewal')">renewal certifications</u> for 
+
+contracts and see when contracts are <u onclick="clickLink('Amend')">amended</u> (if above a certain level)</td>
+						</tr>
+						<!--<TR height="30">
+							<TD class="ovrItem" onclick="clickLink('Amend')" 
+
+onmouseover="ispMouseOver()" onmouseout="ispMouseOut()">See 
+								when contracts are <U>amended</U> (if above a certain 
+
+level)</TD>
+						</TR>-->
+						<tr height="30">
+							<td class="ovrItem" onclick="clickLink('Report')" onmouseover="ispMouseOver()" onmouseout="ispMouseOut()">Have 
+								access to regular, <u>public reports</u> that summarize non-bid 
+
+contract 
+								activity</td>
+						</tr>
+						<tr height="30">
+							<td class="ovrItem" onclick="clickLink('Debarred')" onmouseover="ispMouseOver()" onmouseout="ispMouseOut()">View
+								the list of <u>debarred vendors</u></td>
+						</tr>
+						<tr height="10">
+							<td colspan="2"></td>
+						</tr>
+						<tr>
+							<td colspan="2" class="ovrIntro">Please check back often since 
+
+information will be 
+								updated on a regular basis<br>
+								<br>
+							</td>
+						</tr>
+					</tbody></table>
+				</div>
+			</div>
+			<div class="divContent" style="MARGIN: 25px 0px 0px 20px; PADDING-TOP: 0px">
+				<table border="0" width="90%">
+					<tbody><tr>
+						<td class="lblTextRed10pt">NOTE: <span class="lblTextBlack10pt">eContract Philly 
+
+is 
+							compatible with Internet Explorer, Chrome and Safari; but the site is 
+
+not 
+							presently compatible with Mozilla Firefox.</span></td>
+					</tr>
+					<tr></tr>
+					
+					<tr></tr>
+					<tr>
+						<td class="lblTextRed10pt">PRESS RELEASE – THE CITY OF PHILADELPHIA AND PGW 
+REACH NO-FAULT AGREEMENT WITH DANELLA COMPANIES, INC. <a name="Settlement" class="lblTextBlue10pt" onmouseover="ispMouseOver()" onmouseout="ispMouseOut()" onclick="clickLink('Settlement')">See Attached</a></td>
+					</tr>
+					<tr></tr>
+					
+					<tr></tr>
+					<tr>
+						<td class="lblTextRed10pt">ATTENTION APPLICANTS TO PENSION BOARD AND SINKING 
+
+FUND 
+							COMMISSION OPPORTUNITIES:</td>
+					</tr>
+					<tr>
+						<td class="lblTextBlack10pt">The Commonwealth of Pennsylvania enacted 
+
+Pennsylvania 
+							Act 44 of 2009, also referred to as House Bill (HB) 1828, to address, 
+
+among 
+							other topics, campaign contributions to municipal officials or 
+
+candidates for 
+							municipal office and contracts with municipal pension systems. Some of 
+
+the new 
+							requirements are broader than the City’s Philadelphia Code Chapter 
+
+17-1400 and 
+							it is your responsibility to familiarize yourself with them. The new 
+							requirements can be found in Chapter 7-A of Act 44 <u><a name="HouseBill" onmouseover="ispMouseOver()" onmouseout="ispMouseOut()" onclick="clickLink('HouseBill')">
+									here</a></u>. The City will provide further updates as 
+
+necessary.</td>
+					</tr>
+					<tr>
+					</tr>
+					<tr>
+					</tr>
+					<tr>
+						<td class="lblTextRed10pt">SPECIAL REMINDER FOR THIS ELECTION YEAR (UPDATED 
+							FEBRUARY 2012):</td>
+					</tr>
+					<tr>
+						<td class="lblTextBlack10pt">Please be reminded that individuals and businesses 
+							whose principals, executives, directors, and partners contribute more 
+
+than 
+							$2,900 (if an individual) or more than $11,500 (if a business) to an 
+
+incumbent 
+							or winning candidate for City office are ineligible under City law for 
+
+most 
+							non-competitively bid City contracts, subcontracts, or financial 
+
+assistance. 
+							The law attributes political contributions solicited by a person or by 
+
+an 
+							officer, director, controlling shareholder or partner of a business or 
+							affiliate to be a contribution of that person or business. For more 
+
+details, 
+							please see the information provided in the Disclosure/Eligibility 
+
+section 
+							above. &nbsp;Please note that these eligibility limits were increased 
+
+effective 
+							January 1, 2012.</td>
+					</tr><tr>
+					</tr>
+					<tr>
+					</tr>
+					
+				</tbody></table>
+			</div>
+		</form>
+		<div></div>
+	
+
+</body></html>

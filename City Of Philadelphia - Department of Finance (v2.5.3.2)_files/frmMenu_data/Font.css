@@ -1,0 +1,662 @@
+
+/* LE - 1/8/07 new classes */
+.ovrBrowserMsg
+{
+	FONT-SIZE: 10pt; 
+	MARGIN-LEFT: 0%; 
+	MARGIN-TOP: 1%;
+	FONT-FAMILY: Verdana, Arial;
+	
+}
+.ovrTitle
+{
+	FONT-SIZE: 18pt; 
+	/*font-weight: bold; */
+	BACKGROUND: none transparent scroll repeat 0% 0%; 
+	COLOR: #03399d;
+	FONT-FAMILY: Verdana, Arial;
+
+}
+.ovrTitle2
+{
+	FONT-SIZE: 14pt; 
+	font-weight: bold
+	BACKGROUND: none transparent scroll repeat 0% 0%; 
+	COLOR: #03399d;
+	FONT-FAMILY: Verdana, Arial;
+
+}
+.ovrIntroMsg
+{
+	FONT-SIZE: 12pt; 
+	font-weight: bold;
+	COLOR: black; 
+	FONT-FAMILY: Verdana, Arial;
+	/* FONT-STYLE: italic; */
+}
+
+.ovrBullet
+{
+	PADDING-LEFT: 20px;
+	FONT-SIZE: 12pt; 
+	COLOR: #000000; /* was 140A00 */
+	FONT-FAMILY: Wingdings;
+}
+.ovrIntro
+{
+	FONT-SIZE: 11pt; 
+	COLOR: #140a00;
+	FONT-FAMILY: Verdana, Arial;
+}
+.ovrItem
+{
+	PADDING-LEFT: 15px;
+	FONT-SIZE: 11pt; 
+	COLOR: #140a00; 
+	FONT-FAMILY: Verdana, Arial;
+	cursor: pointer;
+}
+
+.ovrHighlight
+{
+	PADDING-LEFT: 15px;
+	FONT-SIZE: 11pt; 
+	COLOR: #03347d; 
+	FONT-FAMILY: Verdana, Arial;
+	cursor: pointer;
+}
+
+.ovrLink
+{
+	COLOR: #03347d; 
+	cursor: pointer;
+}	
+
+.ovrLink2  /*dwm 1-7-13*/
+{
+	COLOR: #03347d;
+	text-decoration: underline;
+	cursor: pointer;
+}	
+
+
+.mnuLabel
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 11pt;
+    MARGIN-BOTTOM: 0px;
+    MARGIN-LEFT: 0px;
+    COLOR: black;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: rgb(192, 192, 192);
+}
+
+.mnuNormal
+{
+    MARGIN-TOP: 5px;
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 10pt;
+    VISIBILITY: visible;
+    MARGIN-BOTTOM: 3px;
+    MARGIN-LEFT: 0px;
+    CURSOR: pointer;
+    COLOR: rgb(0,51,153);
+    FONT-FAMILY: Verdana, Arial; /* LE - 11.29.2007 - V2.3.3 */
+    /* TEXT-DECORATION: underline; EHD - 11-30-2007 - V2.3.x Removed per Danm*/
+    /* LE - 11.21.2007 - V2.3.1.3 */
+    padding-bottom: 8px;
+    border-bottom: 1px solid #FFFFFF;
+    
+    /* BACKGROUND-COLOR: rgb(192, 192, 192)*/
+}
+ 
+.mnuNormal2
+{
+    MARGIN-TOP: 2px;
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 9pt;
+    VISIBILITY: visible;
+    MARGIN-BOTTOM: 0px;
+    MARGIN-LEFT: 0px;
+    COLOR: rgb(0,51,153);
+    FONT-FAMILY: Verdana, Arial;
+    TEXT-DECORATION: underline;
+    CURSOR: pointer;
+}
+.mnuHighlight
+{
+    MARGIN-TOP: 5px;
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 10pt;
+    VISIBILITY: visible;
+    MARGIN-BOTTOM: 3px;
+    MARGIN-LEFT: 0px;
+    CURSOR: pointer;
+    COLOR: #FFFFFF;
+    FONT-FAMILY: Verdana, Arial;
+    /* TEXT-DECORATION: underline; */
+    BACKGROUND-COLOR: rgb(0, 51, 153);
+    WIDTH: 100%;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #FFFFFF;    
+}
+.mnuHighlight2
+{
+    MARGIN-TOP: 2px;
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 9pt;
+    VISIBILITY: visible;
+    MARGIN-BOTTOM: 0px;
+    MARGIN-LEFT: 0px;
+    COLOR: #FFFFFF;
+    FONT-FAMILY: Verdana, Arial;
+    /* TEXT-DECORATION: underline; */
+    BACKGROUND-COLOR: rgb(0, 51, 153);
+    CURSOR: pointer;
+}
+.mnuSelected
+{
+	margin-top: 5px;
+	font-weight: bold;
+	font-size: 9pt;
+	visibility: visible;
+	margin-bottom: 3px;
+	margin-left: 0px;
+	cursor: pointer;
+	color: rgb(152,0,0);
+	font-family: Verdana, Arial;
+	text-decoration: none;
+	padding-bottom: 8px;
+  border-bottom: 1px solid #FFFFFF;
+}
+
+
+.mnuDisabled
+{
+    MARGIN-TOP: 5px;
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 7pt;
+    VISIBILITY: visible;
+    MARGIN-BOTTOM: 0px;
+    MARGIN-LEFT: 0px;
+    FONT-FAMILY: Verdana, Arial;
+    TEXT-DECORATION: underline
+}
+
+.mnuDivider
+{
+		border-top: 1px solid #FFFFFF;
+		height: 2px;
+    border-bottom: 1px solid #FFFFFF;
+    FONT-SIZE: 2pt;
+}
+
+/* top menu CSS */
+
+.mnuNormalTop
+{
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 10pt;
+    WIDTH: 100%;
+    COLOR: rgb(0,51,153);
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: Gainsboro;  /*rgb(192,192,192)*/
+    MARGIN-BOTTOM: 3;
+    margin-top: 10;
+    MARGIN-LEFT: 15px; 
+    /* TEXT-DECORATION: underline; EHD - 11-30-2007 - V2.3.x Removed per Danm*/
+    /* padding-bottom: 8px; */
+	padding-left: 3px;
+	padding-top: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #FFFFFF;
+
+}
+.mnuSelectedTop
+{
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 10pt;
+    WIDTH: 100%;
+    CURSOR: pointer;
+    COLOR: rgb(152,0,0);
+    FONT-FAMILY: Verdana, Arial;
+    margin-top: 10;
+    MARGIN-BOTTOM: 3;
+    MARGIN-LEFT: 15px;
+    /* BACKGROUND-COLOR: rgb(192,192,192) */
+    /*padding-bottom: 8px; */
+    padding-left: 3px;
+	padding-top: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #FFFFFF;
+}
+
+.mnuHighlightTop
+{
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 10pt;
+    WIDTH: 100%;
+    CURSOR: pointer;
+    COLOR: #FFFFFF;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: rgb(0, 51, 153);
+    MARGIN-BOTTOM: 3;
+    margin-top: 10;
+    MARGIN-LEFT: 15px;
+    text-decoration: none;
+    /*padding-bottom: 8px; */
+    padding-left: 3px;
+	padding-top: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #FFFFFF;
+}
+
+.lblMenuLogout
+{
+	FONT-WEIGHT: normal;
+    FONT-SIZE: 10pt;
+    WIDTH: 100%;
+    COLOR: rgb(153,0,0);
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: Gainsboro;   /*rgb(192,192,192)*/
+    MARGIN-LEFT: 10px;
+    text-decoration: none; /* LE - changed from underline 12.10.2007 */
+    CURSOR: pointer;
+    padding-left: 3px;
+	padding-top: 12px;
+    padding-bottom: 8px;
+}
+.lblMenuDiv
+{
+ color: #FFFFFF
+
+}
+.docMenuBgColor
+{
+    BACKGROUND-COLOR: Gainsboro  /* rgb(192,192,192) */
+}
+/* end top menu CSS */
+
+.hdrLarge
+{
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 12pt;
+    COLOR: royalblue;
+    FONT-FAMILY: Verdana, Arial;
+}
+.hdrMedium
+{
+    FONT-SIZE: 9pt;
+    FONT-WEIGHT: bolder;
+    COLOR: black;
+    FONT-FAMILY: Verdana, Arial;
+}
+.hdrSmall
+{
+    FONT-SIZE: 9pt;
+    COLOR: black;
+    FONT-FAMILY: Verdana, Arial;
+}
+.lblInpDisabled
+{
+    FONT-SIZE: 8pt;
+    COLOR: gray
+}
+.lblInpActive
+{
+    FONT-SIZE: 9pt;
+    COLOR: darkblue
+}
+.fntSmall
+{
+    FONT-SIZE: 10pt;
+    COLOR: green
+}
+.lblInstrNormal
+{
+    FONT-WEIGHT: 600;
+    FONT-SIZE: 7pt;
+    COLOR: royalblue;
+    FONT-FAMILY: Verdana, Arial;
+}
+.lblInstrRequired
+{
+    PADDING-RIGHT: 5px;
+    FONT-WEIGHT: 600;
+    FONT-SIZE: 10pt;
+    COLOR: red;
+    FONT-FAMILY: Verdana, Arial;
+    TEXT-ALIGN: right;
+}
+.lblInstrBold
+{
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 9pt;
+    COLOR: royalblue;
+    FONT-FAMILY: Verdana, Arial;
+}
+.lblInstrHighlight
+{
+    FONT-SIZE: 9pt;
+    COLOR: teal
+}
+.inpRequired
+{
+    FONT-SIZE: 9pt;
+    COLOR: red;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: orange;
+}
+.inpDisabled
+{
+    FONT-WEIGHT: 500;
+    FONT-SIZE: 9pt;
+    COLOR: royalblue;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: lightgoldenrodyellow;
+}
+.errMessages
+{
+    FONT-WEIGHT: 500;
+    FONT-SIZE: 9pt;
+    COLOR: red;
+    FONT-FAMILY: Verdana, Arial;
+}
+.lnkLocal
+{
+    FONT-SIZE: x-small;
+    CURSOR: pointer;
+    COLOR: red;
+    FONT-FAMILY: Verdana, Arial;
+    TEXT-DECORATION: underline;
+}
+
+.inpError
+{
+    FONT-SIZE: 8pt;
+    COLOR: black;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: red;
+}
+.inpNormal
+{
+	font-weight: 500;
+	font-size: 8pt;
+	color: black;
+	font-family: Verdana, Arial;
+	text-align: left;
+}
+
+.inpNormalRight
+{
+    FONT-WEIGHT: 500;
+    FONT-SIZE: 8pt;
+    COLOR: black;
+    FONT-FAMILY: Verdana, Arial;
+    TEXT-ALIGN: right;
+}
+.inpNormalLeft
+{
+    FONT-WEIGHT: 500;
+    FONT-SIZE: 8pt;
+    COLOR: black;
+    FONT-FAMILY: Verdana, Arial;
+    TEXT-ALIGN: left;
+}
+.inpSmall
+{
+    FONT-WEIGHT: 300;
+    FONT-SIZE: 6pt;
+    COLOR: black;
+    FONT-FAMILY: Verdana, Arial;
+    HEIGHT: 10px
+}
+.lblTblHeaderCenter
+{
+	border: solid 1px #999999;
+	/*border-right: #999999 1px solid;
+	border-top: #999999 1px solid;
+	border-left: #999999 1px solid;
+	border-bottom: #999999 1px solid; */
+	font-weight: 100;
+	font-size: 8pt;
+	color: white;
+	font-family: Verdana, Arial;
+	background-color: black;
+	text-align: center;
+	/* LE - removed for normal header behavior on datgrids without scrollbars */
+	/*top: expression(this.offsetParent.scrollTop - 2); */
+	position: relative;
+}
+.lblTblHeaderCenterNF
+{
+	border: solid 1px #999999;
+	/* border-right: #999999 1px solid;
+	border-top: #999999 1px solid;
+	border-left: #999999 1px solid;
+	border-bottom: #999999 1px solid; */
+	font-weight: 100;
+	font-size: 8pt;
+	color: white;
+	font-family: Verdana, Arial;
+	background-color: black;
+	text-align: center;
+}
+.lblTblHeaderLeft
+{	
+	border-right: #999999 1px solid;
+	border-top: #999999 1px solid;
+	font-weight: 100;
+	font-size: 8pt;
+	border-left: #999999 1px solid;
+	color: white;
+	border-bottom: #999999 1px solid;
+	font-family: Verdana, Arial;
+	background-color: black;
+	top: expression(this.offsetParent.scrollTop - 2);
+	TEXT-ALIGN: left 
+}
+.lblTblDataLeft
+{
+	font-size: 8pt;
+	margin-left: 3px;
+	color: black;
+	font-family: Verdana, Arial;
+	background-color: white;
+	text-align: left;
+	white-space: normal;
+}
+.lblTblDataLeftAlt
+{
+	font-size: 8pt;
+	margin-left: 3px;
+	color: black;
+	font-family: Verdana, Arial;
+	background-color: #CCCCCC;
+	text-align: left;	
+	white-space: normal;
+}
+.lblTblDataLeft.lblTblDataCenter
+{
+  TEXT-ALIGN: center;
+}
+/*.lblTblDataLeft.lblTblDataRight
+{
+  TEXT-ALIGN: right;
+} */
+
+.lblTblDataRight
+{
+  TEXT-ALIGN: right;
+} 
+
+.link 
+{
+    FONT-SIZE: 8pt;
+    VISIBILITY: visible;
+    CURSOR: pointer;
+    FONT-FAMILY: Verdana, Arial;
+    TEXT-DECORATION: underline;
+}
+.linkNormal
+{
+  color: black;
+}
+.linkHighlight
+{
+	color: blue;
+}
+.linkSelected
+{
+	color: dodgerblue;
+}
+.linkBold
+{
+  FONT-WEIGHT: bolder;
+}
+.lblNameFormat
+{
+    TEXT-TRANSFORM: capitalize;
+}
+.hdrsignon
+{
+    BORDER-RIGHT: royalblue thin groove;
+    BORDER-TOP: royalblue thin groove;
+    BORDER-LEFT: royalblue thin groove;
+    BORDER-BOTTOM: royalblue thin groove;
+    BACKGROUND-COLOR: lightgoldenrodyellow;
+    TEXT-ALIGN: center;
+}
+.lblSignon
+{
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 12pt;
+    COLOR: black;
+    FONT-FAMILY: Verdana, Arial;
+}
+.lblTextBlack
+{
+	font-family: Verdana, Arial;
+	color: black;
+	font-size: 6.5pt;
+}
+.lblTextBlack10pt
+{
+	font-family: Verdana, Arial;
+	COLOR: Black;
+	font-size: 10pt;
+}
+.lblTextBold
+{
+    FONT-WEIGHT: 800;
+    FONT-SIZE: 9pt;
+    COLOR: black;
+    FONT-FAMILY: Verdana, Arial;
+}
+.lblTextRed
+{
+    FONT-WEIGHT: 500;
+    FONT-SIZE: 9pt;
+    COLOR: #de0000;
+    FONT-FAMILY: Verdana, Arial;
+}
+.lblTextRed10pt
+{
+    FONT-WEIGHT: 500;
+    FONT-SIZE: 10pt;
+    COLOR: #de0000;
+    FONT-FAMILY: Verdana, Arial;
+}
+.lblTextBlue10pt  /*dwm 1-7-13*/
+{
+    FONT-WEIGHT: 500;
+    FONT-SIZE: 10pt;
+    COLOR: blue;
+    FONT-FAMILY: Verdana, Arial;
+    text-decoration: underline;
+}
+.mnuProcessCurrent
+{
+    MARGIN-TOP: 3px;
+    FONT-WEIGHT: 600;
+    FONT-SIZE: 7pt;
+    VISIBILITY: visible;
+    MARGIN-BOTTOM: 0px;
+    MARGIN-LEFT: 0px;
+    COLOR: blue;
+    FONT-FAMILY: Verdana, Arial;
+}
+.mnuProcessComplete
+{
+    MARGIN-TOP: 3px;
+    FONT-WEIGHT: 600;
+    FONT-SIZE: 7pt;
+    VISIBILITY: visible;
+    MARGIN-BOTTOM: 0px;
+    MARGIN-LEFT: 0px;
+    COLOR: #ff9900;
+    FONT-FAMILY: Verdana, Arial;
+}
+.mnuProcess
+{
+    MARGIN-TOP: 3px;
+    FONT-WEIGHT: 600;
+    FONT-SIZE: 7pt;
+    VISIBILITY: visible;
+    MARGIN-BOTTOM: 0px;
+    MARGIN-LEFT: 0px;
+    COLOR: black;
+    FONT-FAMILY: Verdana, Arial;
+}
+.lblTextBlackSmall
+{
+    FONT-SIZE: xx-small;
+    COLOR: black;
+    FONT-FAMILY: Verdana, Arial;
+}
+.inpReadOnlyRt
+{
+    BORDER-RIGHT: lightblue 1px solid;
+    PADDING-RIGHT: 1px;
+    BORDER-TOP: lightblue 1px solid;
+    PADDING-LEFT: 1px;
+    FONT-WEIGHT: 500;
+    FONT-SIZE: 9pt;
+    PADDING-BOTTOM: 2px;
+    BORDER-LEFT: lightblue 1px solid;
+    COLOR: black;
+    PADDING-TOP: 2px;
+    BORDER-BOTTOM: lightblue 1px solid;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: #f2f2f2;
+    TEXT-ALIGN: right
+}
+.errRequired
+{
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 9pt;
+    COLOR: red;
+    FONT-FAMILY: Verdana, Arial;
+    text-align:left
+}
+
+/* LE 1/11/08 new classes for definitions.htm */
+
+.defTitle
+{
+		FONT-WEIGHT: bold;
+		font-size: 16pt;
+}
+
+.defSubtitle
+{
+		font-weight: bold;
+}
+
+.lblDef
+{
+	font-weight: bold;
+	text-decoration: underline;
+}
+	
+		
