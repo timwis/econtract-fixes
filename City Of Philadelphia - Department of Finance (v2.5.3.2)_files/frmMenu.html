@@ -8,14 +8,14 @@
 		<meta content="VisualStudio.HTML" name="ProgId">
 		<meta content="Microsoft Visual Studio .NET 7.1" name="Originator">
 		<link href="frmMenu_data/Font.css" type="text/css" rel="stylesheet">
-			<script language="jscript">
+			<script language="javascript">
 			var gbLoggedIn = false
 			var gsContractId = ''
 			var gbDisplayDiscloseUpdate = false
 			var sCurrentVendorTab = ''
 			var sCurrentDisclosureTab = ''
-			
-	
+
+
 			function isLoaded() {
 				if (parent.main.document.readyState != 'complete' ||
 						parent.MenuWin.document.readyState != 'complete') {
@@ -26,8 +26,8 @@
 				} else {
 					parent.location.href = '../Default.aspx'
 				}		//if
-				
-				
+
+
 			}		//isLoaded
 
 			function Initialize() {
@@ -86,20 +86,20 @@
 				if (sMenuId == 'mnuNewContractDetail') { /* delete this */
 			//		divNewContract.style.display = 'block'
 				} else if (sMenuId == 'mnuRenewalList') {
-				//	divRenewal.style.display = 'block'				
+				//	divRenewal.style.display = 'block'
 				} else if (sMenuId == 'mnuNewContract') {
 //					divNewContract.style.display = 'block'
 				} else if (sMenuId == 'mnuSumOpportunityDetail') {
 					//divSumOpportunity.style.display = 'block'
 				//} else if (sMenuId == 'mnuSumContractDetail') {
-				//	divSumContract.style.display = 'block'					
+				//	divSumContract.style.display = 'block'
 				} else if (sMenuId == 'mnuAwardNotice') {
-			//		divOpportunity.style.display = 'block'					
+			//		divOpportunity.style.display = 'block'
 				} else if (sMenuId == 'mnuExecutedNotice') {
-			//		divExecuted.style.display = 'block'	
+			//		divExecuted.style.display = 'block'
 				} else if (sMenuId == 'mnuSummary' || sMenuId == 'mnuApplicationList' || sMenuId == 'mnuContractList') {
 					divSummary.style.display = 'block'
-			//		divDisclosureApp.style.display = 'block'					
+			//		divDisclosureApp.style.display = 'block'
 				} else if (sMenuId == 'mnuDiscloseApp' || sMenuId == 'mnuDisConsult' ||
 					sMenuId == 'mnuDisContrib' || sMenuId == 'mnuDisContractor' ||
 					sMenuId == 'mnuDisCEContrib' || sMenuId == 'mnuDisCEAdvice' ||
@@ -112,10 +112,11 @@
 						mnuDiscloseApp.innerText = 'Application'
 						mnuDisDocuments.style.display = 'block'
 					}		//if
-				}		//if									
+				}		//if
 			}		//ispDisplayMenuItems
-						
-			function ispMenu_MouseOver() {
+
+			function ispMenu_MouseOver(event) {
+				event.srcElement = event.srcElement || event.target;
 				if (event.srcElement.className == 'mnuNormal') {
 					event.srcElement.className = 'mnuHighlight'
 				}
@@ -134,7 +135,8 @@
 				}
 			}		//ispMenu_MouseOver
 
-			function ispMenu_MouseOut() {
+			function ispMenu_MouseOut(event) {
+				event.srcElement = event.srcElement || event.target;
 				status = ''
 				if (event.srcElement.className == 'mnuHighlight') {
 					event.srcElement.className = 'mnuNormal'
@@ -148,14 +150,12 @@
 				}		//if
 			}		//ispMenu_MouseOut
 
-			function ispMenu_onclick(mnuElement) {
-			
-				if (mnuElement) {
-				}	else {
-					mnuElement = event.srcElement
-					if (mnuElement.id == '' || mnuElement.id.match('div') != null) {
-						return
-					}		//if
+			function ispMenu_onclick(event) {
+				event.srcElement = event.srcElement || event.target;
+
+				var mnuElement = event.srcElement
+				if (mnuElement.id == '' || mnuElement.id.match('div') != null) {
+					return
 				}		//if
 
 				 if (mnuElement.id.match('mnuVendorSection') == null &&
@@ -303,7 +303,7 @@
 							//temp sjc 2012-12-07
 							parent.main.window.document.body.style.display = 'none'
 							parent.main.location.href = 'https://secure.phila.gov/ECONTRACT/' + 'Documents/FrmVendorApp.aspx'
-							divSummary.style.display = 'none'						
+							divSummary.style.display = 'none'
 							break
 						case 'mnuDisConsult':
 							//parent.main.window.document.body.style.visibility = 'hidden'
@@ -371,7 +371,7 @@
 							//window.open('https://secure.phila.gov/ECONTRACT/' + 'documents/frmPDFWindow.aspx?inc=' + 'https://secure.phila.gov/ECONTRACT/' + 'Inc/Disclosure Overview.pdf','AcisDoc')
 							window.open('../Inc/Disclosure Overview.pdf','AcisDoc')
 							break
-						
+
 						case 'mnuVendorDefinitions':
 							mnuElement.className = 'mnuNormal'
 							window.open('https://secure.phila.gov/ECONTRACT/' + 'documents/frmPDFWindow.aspx?inc=' + 'https://secure.phila.gov/ECONTRACT/' + 'Inc/Definitions.htm','AcisDoc')
@@ -428,8 +428,8 @@
 							break
 					}		//switch
 			}		//ispMenu_onclick
-			
-			
+
+
 			function resetMenuStyles() {
 			for (i=0; i<document.all.length; i++) {
 							if (document.all.item(i).className == 'mnuSelected') {
@@ -438,7 +438,7 @@
 							}		//if
 						}		//for
 			} // resetmenuStyles
-			
+
 			// LE - called from frmTopMenu1.ascx - keeps Login style "selected" if top menu login is clicked; otherwise resets all styles
 			function setLoginStyle() {
 			for (i=0; i<document.all.length; i++) {
@@ -452,7 +452,7 @@
 							}		//if
 						}		//for
 			} // resetmenuStyles
-			
+
 			function ispHighlightMenu(obj) {
 				if (gbDisplayDiscloseUpdate == 'true') {
 					mnuUpdates.style.display = 'block'
@@ -481,7 +481,7 @@
 					}		//if
 				}		//if
 			}		//ispHighlightMenu
-			
+
 			</script>
 	</head>
 	<body style="MARGIN: 0px" onload="Initialize()" bgcolor="gainsboro">
@@ -491,7 +491,7 @@
 			</tr>
 			<tr>
 				<td valign="top">
-					<div id="divMain" onmouseover="ispMenu_MouseOver()" style="MARGIN-LEFT: 10px" onclick="ispMenu_onclick()" onmouseout="ispMenu_MouseOut()">
+					<div id="divMain" onmouseover="ispMenu_MouseOver(event)" style="MARGIN-LEFT: 10px" onclick="ispMenu_onclick(event)" onmouseout="ispMenu_MouseOut(event)">
 						<p style="MARGIN-TOP: 5px; MARGIN-BOTTOM: 5px"></p>
 						<p class="mnuNormal" id="mnuGenOverview" title="Overview of legislation and what is available on the website/how things work." style="MARGIN-TOP: 15px">Home</p>
 						<p style="MARGIN-TOP: 10px; MARGIN-BOTTOM: 10px"></p>
@@ -519,7 +519,7 @@
 							<!--Vendor Application Section-->
 							<div id="divDisclosureApp" style="DISPLAY: none">
 								<p class="mnuNormal" id="mnuDiscloseApp" style="MARGIN-LEFT: 7px">Application</p>
-								<p class="mnuNormal" id="mnuDisDocuments" style="MARGIN-TOP: 2px; FONT-SIZE: 9pt; MARGIN-LEFT: 14px">Attach 
+								<p class="mnuNormal" id="mnuDisDocuments" style="MARGIN-TOP: 2px; FONT-SIZE: 9pt; MARGIN-LEFT: 14px">Attach
 									Documents</p>
 								<p class="mnuNormal" id="mnuDisContrib" style="MARGIN-TOP: 2px; FONT-SIZE: 9pt; MARGIN-LEFT: 14px">Contributions</p>
 								<p class="mnuNormal" id="mnuDisConsult" style="MARGIN-TOP: 2px; FONT-SIZE: 9pt; MARGIN-LEFT: 14px">Consultants</p>
@@ -540,9 +540,9 @@
 						<!--EHD - 12.17.2008 - Task 113 - Changed Wording per City-->
 						<p class="mnuNormal" id="mnuAwardList" title="Notice of Intent to Contract decisions for new non-bid contract opportunities" style="DISPLAY: block; MARGIN-TOP: 30px">Notice of Intent to Contract</p>
 						<p class="mnuNormal" id="mnuAmendmentList" style="DISPLAY: block">Amendments</p>
-						<p class="mnuNormal" id="mnuRenewalList" title="Information on contract and lease renewals">Contract 
+						<p class="mnuNormal" id="mnuRenewalList" title="Information on contract and lease renewals">Contract
 							Renewals</p>
-						<p class="mnuNormal" id="mnuExecutedList" title="Vendor applications, including disclosures, for executed non-bid contracts">Vendor 
+						<p class="mnuNormal" id="mnuExecutedList" title="Vendor applications, including disclosures, for executed non-bid contracts">Vendor
 							Applications (for Executed Contracts)</p>
 						<p class="mnuNormal" style="BORDER-BOTTOM: medium none" id="mnuReports">Reports</p>
 					</div>
@@ -550,6 +550,6 @@
 			</tr>
 		</tbody></table>
 		<div></div>
-	
+
 
 </body></html>
